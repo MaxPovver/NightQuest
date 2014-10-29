@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841DDD631A004C9900F16B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD621A004C9900F16B5D /* AppDelegate.swift */; };
+		841DDD651A004C9900F16B5D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD641A004C9900F16B5D /* MasterViewController.swift */; };
+		841DDD671A004C9900F16B5D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD661A004C9900F16B5D /* DetailViewController.swift */; };
+		841DDD6A1A004C9900F16B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD681A004C9900F16B5D /* Main.storyboard */; };
+		841DDD6C1A004C9900F16B5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD6B1A004C9900F16B5D /* Images.xcassets */; };
+		841DDD6F1A004C9900F16B5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */; };
+		841DDD7B1A004C9900F16B5D /* NightQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		841DDD751A004C9900F16B5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 841DDD551A004C9900F16B5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 841DDD5C1A004C9900F16B5D;
+			remoteInfo = NightQuest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		841DDD5D1A004C9900F16B5D /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841DDD611A004C9900F16B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841DDD621A004C9900F16B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		841DDD641A004C9900F16B5D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		841DDD661A004C9900F16B5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		841DDD691A004C9900F16B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		841DDD6B1A004C9900F16B5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		841DDD6E1A004C9900F16B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		841DDD741A004C9900F16B5D /* NightQuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightQuestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		841DDD791A004C9900F16B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightQuestTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		841DDD5A1A004C9900F16B5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841DDD711A004C9900F16B5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		841DDD541A004C9900F16B5D = {
+			isa = PBXGroup;
+			children = (
+				841DDD5F1A004C9900F16B5D /* NightQuest */,
+				841DDD771A004C9900F16B5D /* NightQuestTests */,
+				841DDD5E1A004C9900F16B5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		841DDD5E1A004C9900F16B5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841DDD5D1A004C9900F16B5D /* NightQuest.app */,
+				841DDD741A004C9900F16B5D /* NightQuestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841DDD5F1A004C9900F16B5D /* NightQuest */ = {
+			isa = PBXGroup;
+			children = (
+				841DDD621A004C9900F16B5D /* AppDelegate.swift */,
+				841DDD641A004C9900F16B5D /* MasterViewController.swift */,
+				841DDD661A004C9900F16B5D /* DetailViewController.swift */,
+				841DDD681A004C9900F16B5D /* Main.storyboard */,
+				841DDD6B1A004C9900F16B5D /* Images.xcassets */,
+				841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */,
+				841DDD601A004C9900F16B5D /* Supporting Files */,
+			);
+			path = NightQuest;
+			sourceTree = "<group>";
+		};
+		841DDD601A004C9900F16B5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				841DDD611A004C9900F16B5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		841DDD771A004C9900F16B5D /* NightQuestTests */ = {
+			isa = PBXGroup;
+			children = (
+				841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */,
+				841DDD781A004C9900F16B5D /* Supporting Files */,
+			);
+			path = NightQuestTests;
+			sourceTree = "<group>";
+		};
+		841DDD781A004C9900F16B5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				841DDD791A004C9900F16B5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		841DDD5C1A004C9900F16B5D /* NightQuest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841DDD7E1A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuest" */;
+			buildPhases = (
+				841DDD591A004C9900F16B5D /* Sources */,
+				841DDD5A1A004C9900F16B5D /* Frameworks */,
+				841DDD5B1A004C9900F16B5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NightQuest;
+			productName = NightQuest;
+			productReference = 841DDD5D1A004C9900F16B5D /* NightQuest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		841DDD731A004C9900F16B5D /* NightQuestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841DDD811A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuestTests" */;
+			buildPhases = (
+				841DDD701A004C9900F16B5D /* Sources */,
+				841DDD711A004C9900F16B5D /* Frameworks */,
+				841DDD721A004C9900F16B5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				841DDD761A004C9900F16B5D /* PBXTargetDependency */,
+			);
+			name = NightQuestTests;
+			productName = NightQuestTests;
+			productReference = 841DDD741A004C9900F16B5D /* NightQuestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		841DDD551A004C9900F16B5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = NightQuest;
+				TargetAttributes = {
+					841DDD5C1A004C9900F16B5D = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					841DDD731A004C9900F16B5D = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 841DDD5C1A004C9900F16B5D;
+					};
+				};
+			};
+			buildConfigurationList = 841DDD581A004C9900F16B5D /* Build configuration list for PBXProject "NightQuest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 841DDD541A004C9900F16B5D;
+			productRefGroup = 841DDD5E1A004C9900F16B5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				841DDD5C1A004C9900F16B5D /* NightQuest */,
+				841DDD731A004C9900F16B5D /* NightQuestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		841DDD5B1A004C9900F16B5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841DDD6A1A004C9900F16B5D /* Main.storyboard in Resources */,
+				841DDD6F1A004C9900F16B5D /* LaunchScreen.xib in Resources */,
+				841DDD6C1A004C9900F16B5D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841DDD721A004C9900F16B5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		841DDD591A004C9900F16B5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841DDD671A004C9900F16B5D /* DetailViewController.swift in Sources */,
+				841DDD651A004C9900F16B5D /* MasterViewController.swift in Sources */,
+				841DDD631A004C9900F16B5D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		841DDD701A004C9900F16B5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841DDD7B1A004C9900F16B5D /* NightQuestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		841DDD761A004C9900F16B5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 841DDD5C1A004C9900F16B5D /* NightQuest */;
+			targetProxy = 841DDD751A004C9900F16B5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		841DDD681A004C9900F16B5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841DDD691A004C9900F16B5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841DDD6E1A004C9900F16B5D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		841DDD7C1A004C9900F16B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		841DDD7D1A004C9900F16B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		841DDD7F1A004C9900F16B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NightQuest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		841DDD801A004C9900F16B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NightQuest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		841DDD821A004C9900F16B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NightQuestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightQuest.app/NightQuest";
+			};
+			name = Debug;
+		};
+		841DDD831A004C9900F16B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NightQuestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NightQuest.app/NightQuest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		841DDD581A004C9900F16B5D /* Build configuration list for PBXProject "NightQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841DDD7C1A004C9900F16B5D /* Debug */,
+				841DDD7D1A004C9900F16B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841DDD7E1A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841DDD7F1A004C9900F16B5D /* Debug */,
+				841DDD801A004C9900F16B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841DDD811A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841DDD821A004C9900F16B5D /* Debug */,
+				841DDD831A004C9900F16B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 841DDD551A004C9900F16B5D /* Project object */;
+}
