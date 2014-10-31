@@ -7,48 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		841DDD631A004C9900F16B5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD621A004C9900F16B5D /* AppDelegate.swift */; };
-		841DDD651A004C9900F16B5D /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD641A004C9900F16B5D /* MasterViewController.swift */; };
-		841DDD671A004C9900F16B5D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD661A004C9900F16B5D /* DetailViewController.swift */; };
-		841DDD6A1A004C9900F16B5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD681A004C9900F16B5D /* Main.storyboard */; };
-		841DDD6C1A004C9900F16B5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD6B1A004C9900F16B5D /* Images.xcassets */; };
-		841DDD6F1A004C9900F16B5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */; };
-		841DDD7B1A004C9900F16B5D /* NightQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */; };
+		84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610C1A029C4B004E5A78 /* AppDelegate.swift */; };
+		84A1610F1A029C4B004E5A78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610E1A029C4B004E5A78 /* ViewController.swift */; };
+		84A161121A029C4B004E5A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A161101A029C4B004E5A78 /* Main.storyboard */; };
+		84A161141A029C4B004E5A78 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A161131A029C4B004E5A78 /* Images.xcassets */; };
+		84A161171A029C4B004E5A78 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A161151A029C4B004E5A78 /* LaunchScreen.xib */; };
+		84A161231A029C4B004E5A78 /* NightQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A161221A029C4B004E5A78 /* NightQuestTests.swift */; };
+		84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1612C1A029C99004E5A78 /* ServerCooperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		841DDD751A004C9900F16B5D /* PBXContainerItemProxy */ = {
+		84A1611D1A029C4B004E5A78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 841DDD551A004C9900F16B5D /* Project object */;
+			containerPortal = 84A160FF1A029C4B004E5A78 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 841DDD5C1A004C9900F16B5D;
+			remoteGlobalIDString = 84A161061A029C4B004E5A78;
 			remoteInfo = NightQuest;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		841DDD5D1A004C9900F16B5D /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		841DDD611A004C9900F16B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		841DDD621A004C9900F16B5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		841DDD641A004C9900F16B5D /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		841DDD661A004C9900F16B5D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		841DDD691A004C9900F16B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		841DDD6B1A004C9900F16B5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		841DDD6E1A004C9900F16B5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		841DDD741A004C9900F16B5D /* NightQuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightQuestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		841DDD791A004C9900F16B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightQuestTests.swift; sourceTree = "<group>"; };
+		84A161071A029C4B004E5A78 /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A1610B1A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A1610C1A029C4B004E5A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84A1610E1A029C4B004E5A78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84A161111A029C4B004E5A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84A161131A029C4B004E5A78 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84A161161A029C4B004E5A78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		84A1611C1A029C4B004E5A78 /* NightQuestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NightQuestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A161211A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84A161221A029C4B004E5A78 /* NightQuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightQuestTests.swift; sourceTree = "<group>"; };
+		84A1612C1A029C99004E5A78 /* ServerCooperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCooperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		841DDD5A1A004C9900F16B5D /* Frameworks */ = {
+		84A161041A029C4B004E5A78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		841DDD711A004C9900F16B5D /* Frameworks */ = {
+		84A161191A029C4B004E5A78 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,59 +58,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		841DDD541A004C9900F16B5D = {
+		84A160FE1A029C4B004E5A78 = {
 			isa = PBXGroup;
 			children = (
-				841DDD5F1A004C9900F16B5D /* NightQuest */,
-				841DDD771A004C9900F16B5D /* NightQuestTests */,
-				841DDD5E1A004C9900F16B5D /* Products */,
+				84A161091A029C4B004E5A78 /* NightQuest */,
+				84A1611F1A029C4B004E5A78 /* NightQuestTests */,
+				84A161081A029C4B004E5A78 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		841DDD5E1A004C9900F16B5D /* Products */ = {
+		84A161081A029C4B004E5A78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841DDD5D1A004C9900F16B5D /* NightQuest.app */,
-				841DDD741A004C9900F16B5D /* NightQuestTests.xctest */,
+				84A161071A029C4B004E5A78 /* NightQuest.app */,
+				84A1611C1A029C4B004E5A78 /* NightQuestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		841DDD5F1A004C9900F16B5D /* NightQuest */ = {
+		84A161091A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXGroup;
 			children = (
-				841DDD621A004C9900F16B5D /* AppDelegate.swift */,
-				841DDD641A004C9900F16B5D /* MasterViewController.swift */,
-				841DDD661A004C9900F16B5D /* DetailViewController.swift */,
-				841DDD681A004C9900F16B5D /* Main.storyboard */,
-				841DDD6B1A004C9900F16B5D /* Images.xcassets */,
-				841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */,
-				841DDD601A004C9900F16B5D /* Supporting Files */,
+				84A1610C1A029C4B004E5A78 /* AppDelegate.swift */,
+				84A1610E1A029C4B004E5A78 /* ViewController.swift */,
+				84A1612C1A029C99004E5A78 /* ServerCooperation.swift */,
+				84A161101A029C4B004E5A78 /* Main.storyboard */,
+				84A161131A029C4B004E5A78 /* Images.xcassets */,
+				84A161151A029C4B004E5A78 /* LaunchScreen.xib */,
+				84A1610A1A029C4B004E5A78 /* Supporting Files */,
 			);
 			path = NightQuest;
 			sourceTree = "<group>";
 		};
-		841DDD601A004C9900F16B5D /* Supporting Files */ = {
+		84A1610A1A029C4B004E5A78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				841DDD611A004C9900F16B5D /* Info.plist */,
+				84A1610B1A029C4B004E5A78 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		841DDD771A004C9900F16B5D /* NightQuestTests */ = {
+		84A1611F1A029C4B004E5A78 /* NightQuestTests */ = {
 			isa = PBXGroup;
 			children = (
-				841DDD7A1A004C9900F16B5D /* NightQuestTests.swift */,
-				841DDD781A004C9900F16B5D /* Supporting Files */,
+				84A161221A029C4B004E5A78 /* NightQuestTests.swift */,
+				84A161201A029C4B004E5A78 /* Supporting Files */,
 			);
 			path = NightQuestTests;
 			sourceTree = "<group>";
 		};
-		841DDD781A004C9900F16B5D /* Supporting Files */ = {
+		84A161201A029C4B004E5A78 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				841DDD791A004C9900F16B5D /* Info.plist */,
+				84A161211A029C4B004E5A78 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -118,13 +118,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		841DDD5C1A004C9900F16B5D /* NightQuest */ = {
+		84A161061A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 841DDD7E1A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuest" */;
+			buildConfigurationList = 84A161261A029C4B004E5A78 /* Build configuration list for PBXNativeTarget "NightQuest" */;
 			buildPhases = (
-				841DDD591A004C9900F16B5D /* Sources */,
-				841DDD5A1A004C9900F16B5D /* Frameworks */,
-				841DDD5B1A004C9900F16B5D /* Resources */,
+				84A161031A029C4B004E5A78 /* Sources */,
+				84A161041A029C4B004E5A78 /* Frameworks */,
+				84A161051A029C4B004E5A78 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -132,46 +132,47 @@
 			);
 			name = NightQuest;
 			productName = NightQuest;
-			productReference = 841DDD5D1A004C9900F16B5D /* NightQuest.app */;
+			productReference = 84A161071A029C4B004E5A78 /* NightQuest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		841DDD731A004C9900F16B5D /* NightQuestTests */ = {
+		84A1611B1A029C4B004E5A78 /* NightQuestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 841DDD811A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuestTests" */;
+			buildConfigurationList = 84A161291A029C4B004E5A78 /* Build configuration list for PBXNativeTarget "NightQuestTests" */;
 			buildPhases = (
-				841DDD701A004C9900F16B5D /* Sources */,
-				841DDD711A004C9900F16B5D /* Frameworks */,
-				841DDD721A004C9900F16B5D /* Resources */,
+				84A161181A029C4B004E5A78 /* Sources */,
+				84A161191A029C4B004E5A78 /* Frameworks */,
+				84A1611A1A029C4B004E5A78 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				841DDD761A004C9900F16B5D /* PBXTargetDependency */,
+				84A1611E1A029C4B004E5A78 /* PBXTargetDependency */,
 			);
 			name = NightQuestTests;
 			productName = NightQuestTests;
-			productReference = 841DDD741A004C9900F16B5D /* NightQuestTests.xctest */;
+			productReference = 84A1611C1A029C4B004E5A78 /* NightQuestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		841DDD551A004C9900F16B5D /* Project object */ = {
+		84A160FF1A029C4B004E5A78 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = NightQuest;
 				TargetAttributes = {
-					841DDD5C1A004C9900F16B5D = {
+					84A161061A029C4B004E5A78 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = LP7FP795XW;
 					};
-					841DDD731A004C9900F16B5D = {
+					84A1611B1A029C4B004E5A78 = {
 						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 841DDD5C1A004C9900F16B5D;
+						TestTargetID = 84A161061A029C4B004E5A78;
 					};
 				};
 			};
-			buildConfigurationList = 841DDD581A004C9900F16B5D /* Build configuration list for PBXProject "NightQuest" */;
+			buildConfigurationList = 84A161021A029C4B004E5A78 /* Build configuration list for PBXProject "NightQuest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -179,29 +180,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 841DDD541A004C9900F16B5D;
-			productRefGroup = 841DDD5E1A004C9900F16B5D /* Products */;
+			mainGroup = 84A160FE1A029C4B004E5A78;
+			productRefGroup = 84A161081A029C4B004E5A78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				841DDD5C1A004C9900F16B5D /* NightQuest */,
-				841DDD731A004C9900F16B5D /* NightQuestTests */,
+				84A161061A029C4B004E5A78 /* NightQuest */,
+				84A1611B1A029C4B004E5A78 /* NightQuestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		841DDD5B1A004C9900F16B5D /* Resources */ = {
+		84A161051A029C4B004E5A78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841DDD6A1A004C9900F16B5D /* Main.storyboard in Resources */,
-				841DDD6F1A004C9900F16B5D /* LaunchScreen.xib in Resources */,
-				841DDD6C1A004C9900F16B5D /* Images.xcassets in Resources */,
+				84A161121A029C4B004E5A78 /* Main.storyboard in Resources */,
+				84A161171A029C4B004E5A78 /* LaunchScreen.xib in Resources */,
+				84A161141A029C4B004E5A78 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		841DDD721A004C9900F16B5D /* Resources */ = {
+		84A1611A1A029C4B004E5A78 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,47 +212,47 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		841DDD591A004C9900F16B5D /* Sources */ = {
+		84A161031A029C4B004E5A78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841DDD671A004C9900F16B5D /* DetailViewController.swift in Sources */,
-				841DDD651A004C9900F16B5D /* MasterViewController.swift in Sources */,
-				841DDD631A004C9900F16B5D /* AppDelegate.swift in Sources */,
+				84A1610F1A029C4B004E5A78 /* ViewController.swift in Sources */,
+				84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */,
+				84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		841DDD701A004C9900F16B5D /* Sources */ = {
+		84A161181A029C4B004E5A78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841DDD7B1A004C9900F16B5D /* NightQuestTests.swift in Sources */,
+				84A161231A029C4B004E5A78 /* NightQuestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		841DDD761A004C9900F16B5D /* PBXTargetDependency */ = {
+		84A1611E1A029C4B004E5A78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 841DDD5C1A004C9900F16B5D /* NightQuest */;
-			targetProxy = 841DDD751A004C9900F16B5D /* PBXContainerItemProxy */;
+			target = 84A161061A029C4B004E5A78 /* NightQuest */;
+			targetProxy = 84A1611D1A029C4B004E5A78 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		841DDD681A004C9900F16B5D /* Main.storyboard */ = {
+		84A161101A029C4B004E5A78 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				841DDD691A004C9900F16B5D /* Base */,
+				84A161111A029C4B004E5A78 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		841DDD6D1A004C9900F16B5D /* LaunchScreen.xib */ = {
+		84A161151A029C4B004E5A78 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				841DDD6E1A004C9900F16B5D /* Base */,
+				84A161161A029C4B004E5A78 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -259,7 +260,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		841DDD7C1A004C9900F16B5D /* Debug */ = {
+		84A161241A029C4B004E5A78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,7 +303,7 @@
 			};
 			name = Debug;
 		};
-		841DDD7D1A004C9900F16B5D /* Release */ = {
+		84A161251A029C4B004E5A78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -338,7 +339,7 @@
 			};
 			name = Release;
 		};
-		841DDD7F1A004C9900F16B5D /* Debug */ = {
+		84A161271A029C4B004E5A78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -348,7 +349,7 @@
 			};
 			name = Debug;
 		};
-		841DDD801A004C9900F16B5D /* Release */ = {
+		84A161281A029C4B004E5A78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -358,7 +359,7 @@
 			};
 			name = Release;
 		};
-		841DDD821A004C9900F16B5D /* Debug */ = {
+		84A1612A1A029C4B004E5A78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -377,7 +378,7 @@
 			};
 			name = Debug;
 		};
-		841DDD831A004C9900F16B5D /* Release */ = {
+		84A1612B1A029C4B004E5A78 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -395,34 +396,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		841DDD581A004C9900F16B5D /* Build configuration list for PBXProject "NightQuest" */ = {
+		84A161021A029C4B004E5A78 /* Build configuration list for PBXProject "NightQuest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				841DDD7C1A004C9900F16B5D /* Debug */,
-				841DDD7D1A004C9900F16B5D /* Release */,
+				84A161241A029C4B004E5A78 /* Debug */,
+				84A161251A029C4B004E5A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		841DDD7E1A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuest" */ = {
+		84A161261A029C4B004E5A78 /* Build configuration list for PBXNativeTarget "NightQuest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				841DDD7F1A004C9900F16B5D /* Debug */,
-				841DDD801A004C9900F16B5D /* Release */,
+				84A161271A029C4B004E5A78 /* Debug */,
+				84A161281A029C4B004E5A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		841DDD811A004C9900F16B5D /* Build configuration list for PBXNativeTarget "NightQuestTests" */ = {
+		84A161291A029C4B004E5A78 /* Build configuration list for PBXNativeTarget "NightQuestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				841DDD821A004C9900F16B5D /* Debug */,
-				841DDD831A004C9900F16B5D /* Release */,
+				84A1612A1A029C4B004E5A78 /* Debug */,
+				84A1612B1A029C4B004E5A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 841DDD551A004C9900F16B5D /* Project object */;
+	rootObject = 84A160FF1A029C4B004E5A78 /* Project object */;
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "841DDD5C1A004C9900F16B5D"
+               BlueprintIdentifier = "84A161061A029C4B004E5A78"
                BuildableName = "NightQuest.app"
                BlueprintName = "NightQuest"
                ReferencedContainer = "container:NightQuest.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "841DDD731A004C9900F16B5D"
+               BlueprintIdentifier = "84A1611B1A029C4B004E5A78"
                BuildableName = "NightQuestTests.xctest"
                BlueprintName = "NightQuestTests"
                ReferencedContainer = "container:NightQuest.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "841DDD731A004C9900F16B5D"
+               BlueprintIdentifier = "84A1611B1A029C4B004E5A78"
                BuildableName = "NightQuestTests.xctest"
                BlueprintName = "NightQuestTests"
                ReferencedContainer = "container:NightQuest.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "841DDD5C1A004C9900F16B5D"
+            BlueprintIdentifier = "84A161061A029C4B004E5A78"
             BuildableName = "NightQuest.app"
             BlueprintName = "NightQuest"
             ReferencedContainer = "container:NightQuest.xcodeproj">
@@ -75,7 +75,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "841DDD5C1A004C9900F16B5D"
+            BlueprintIdentifier = "84A161061A029C4B004E5A78"
             BuildableName = "NightQuest.app"
             BlueprintName = "NightQuest"
             ReferencedContainer = "container:NightQuest.xcodeproj">
@@ -93,7 +93,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "841DDD5C1A004C9900F16B5D"
+            BlueprintIdentifier = "84A161061A029C4B004E5A78"
             BuildableName = "NightQuest.app"
             BlueprintName = "NightQuest"
             ReferencedContainer = "container:NightQuest.xcodeproj">

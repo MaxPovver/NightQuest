@@ -2,7 +2,7 @@
 //  NightQuestTests.swift
 //  NightQuestTests
 //
-//  Created by Admin on 29.10.14.
+//  Created by Admin on 30.10.14.
 //  Copyright (c) 2014 NightQuest. All rights reserved.
 //
 
