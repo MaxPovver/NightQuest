@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    var server:Server=Server();
+    
     var phone = ""
     var username = ""
     var password = ""
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         var phoneNumber = self.phone //вытаскиваем сюда значение телефона, который чувак зарегать хочет
         if phoneNumber.utf16Count > 5 {//если номер нормальной длины
             println("registering  \(self.phone)")
-            server.tryRegister(phoneNumber)
+            server.tryRegister(phoneNumber,processRegistrationResult)
         }
         else
         {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         var phoneNumber = self.username //вытаскиваем сюда значение телефона, который чувак зарегать хочет
         if phoneNumber.utf16Count > 5 {//если номер нормальной длины
             println("logging in as  \(self.username)")
-            server.tryLogin(phoneNumber,pass: self.password)
+            server.tryLogin(phoneNumber,pass: self.password,processLoginResult)
         }
         else
         {
@@ -63,12 +63,48 @@ class ViewController: UIViewController {
     @IBAction func logout(sender :UIButton)//это делается при нажатии кнопки входа.
     {
         println("logging out")
-        server.tryLogout()
+        server.tryLogout(processLogoutResult)
     }
     @IBAction func reset(sender :UIButton)//это делается при нажатии кнопки входа.
     {
         println("resetting pass")
-        server.tryReset()
+        server.tryReset(processResetResult)
+    }
+    func processRegistrationResult(json:NSDictionary)
+    {
+        if (json["code"] as String != "ok" ){
+            println(json["message"] as String)
+        } else
+        {
+            println("Register OK. Wait for SMS with code")
+        }
+    }
+    func processLoginResult(json:NSDictionary)
+    {
+        if (json["code"] as String != "ok" ){
+            println(json["message"]? as String)
+        } else
+        {
+            println("Login OK!")
+        }
+    }
+    func processLogoutResult(json:NSDictionary)
+    {
+        if (json["code"] as String != "ok" ){
+            println(json["message"]? as String)
+        } else
+        {
+            println("Logout OK!")
+        }
+    }
+    func processResetResult(json:NSDictionary)
+    {
+        if (json["code"] as String != "ok" ){
+            println(json["message"]? as String)
+        } else
+        {
+            println("Reset OK!")
+        }
     }
 }
 

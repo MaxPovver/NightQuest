@@ -8,6 +8,7 @@
 
 import UIKit
 
+let server:Server=Server()//создаем объект для работы с сервером
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        println("all ok")
         return true
     }
 
