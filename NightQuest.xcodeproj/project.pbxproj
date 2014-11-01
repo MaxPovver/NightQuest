@@ -16,6 +16,7 @@
 		84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1612C1A029C99004E5A78 /* ServerCooperation.swift */; };
 		84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55031A04C7C500D30171 /* PersonalViewController.swift */; };
 		84DF55061A04C7EE00D30171 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55051A04C7EE00D30171 /* RegisterViewController.swift */; };
+		84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55071A04CEC300D30171 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		84A1612C1A029C99004E5A78 /* ServerCooperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCooperation.swift; sourceTree = "<group>"; };
 		84DF55031A04C7C500D30171 /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		84DF55051A04C7EE00D30171 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		84DF55071A04CEC300D30171 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				84A161131A029C4B004E5A78 /* Images.xcassets */,
 				84A161151A029C4B004E5A78 /* LaunchScreen.xib */,
 				84A1610A1A029C4B004E5A78 /* Supporting Files */,
+				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 			);
 			path = NightQuest;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */,
 				84DF55061A04C7EE00D30171 /* RegisterViewController.swift in Sources */,
 				84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */,
+				84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */,
 				84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */,
 				84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */,
 			);
