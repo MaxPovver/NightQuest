@@ -292,18 +292,6 @@
                                     <rect key="frame" x="120" y="36" width="184" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-pq-wtQ">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Выйти">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="258" y="117" width="46" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="logout:" destination="WN9-0N-awy" eventType="touchUpInside" id="6uc-jJ-PTw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnE-3R-2Fg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Сбросить пароль">
@@ -316,23 +304,38 @@
                                     <action selector="reset:" destination="WN9-0N-awy" eventType="touchUpInside" id="LtB-QC-u4p"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwW-pq-wtQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Выйти">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="258" y="117" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="logout:" destination="WN9-0N-awy" eventType="touchUpInside" id="6uc-jJ-PTw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="wFK-8f-eI3"/>
-                                <exclude reference="gwW-pq-wtQ"/>
                                 <exclude reference="pnE-3R-2Fg"/>
+                                <exclude reference="gwW-pq-wtQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="wFK-8f-eI3"/>
-                                <include reference="gwW-pq-wtQ"/>
                                 <include reference="pnE-3R-2Fg"/>
+                                <include reference="gwW-pq-wtQ"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="YgS-An-M2w" kind="show" identifier="PersonalToLogin" id="u4F-QV-d9P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN9-0N-awy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +343,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="trC-9t-EQU"/>
+        <segue reference="u4F-QV-d9P"/>
     </inferredMetricsTieBreakers>
 </document>

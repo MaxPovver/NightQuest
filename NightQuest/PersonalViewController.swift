@@ -38,6 +38,7 @@ class PersonalViewController: UIViewController {
             println(json["message"]? as String)
         } else
         {
+            self.performSegueWithIdentifier("PersonalToLogin", sender: self)
             println("Logout OK!")
         }
     }
@@ -47,6 +48,7 @@ class PersonalViewController: UIViewController {
             println(json["message"]? as String)
         } else
         {
+            self.performSegueWithIdentifier("PersonalToLogin", sender: self)
             println("Reset OK!")
         }
     }
