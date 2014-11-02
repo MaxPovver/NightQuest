@@ -11,11 +11,13 @@ import UIKit
 
 class PersonalViewController: UIViewController {
     
+    @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var Progress: UIActivityIndicatorView!
     @IBOutlet weak var QuestsCounter: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.reloadQuestCount(self.updateBtn)
     }
     
     override func didReceiveMemoryWarning() {
