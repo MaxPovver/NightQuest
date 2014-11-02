@@ -85,6 +85,7 @@
 		84A161091A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXGroup;
 			children = (
+				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 				84A1610C1A029C4B004E5A78 /* AppDelegate.swift */,
 				84DF55031A04C7C500D30171 /* PersonalViewController.swift */,
 				84DF55051A04C7EE00D30171 /* RegisterViewController.swift */,
@@ -94,7 +95,6 @@
 				84A161131A029C4B004E5A78 /* Images.xcassets */,
 				84A161151A029C4B004E5A78 /* LaunchScreen.xib */,
 				84A1610A1A029C4B004E5A78 /* Supporting Files */,
-				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 			);
 			path = NightQuest;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7oY-HA-NMF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ckO-F5-PkS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-hq-saK">
@@ -54,6 +55,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tK4-8J-ivd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QGf-1P-m1h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Регистрация" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYE-Tm-sHo">
@@ -120,6 +122,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MGX-E6-btU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gI3-xd-L3l">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFz-4j-WPg">
@@ -225,6 +228,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fww-UZ-ZUM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2gb-al-d0S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Персональные данные" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-8f-eI3">
