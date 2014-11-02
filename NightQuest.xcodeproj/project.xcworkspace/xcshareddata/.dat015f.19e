@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D5553E49-D1BA-49E1-938B-043C2586FE15</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NightQuest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7C095F7C3E424919C495905CE523E31081098BAD</key>
+		<string>https://github.com/MaxPovver/NightQuest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NightQuest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7C095F7C3E424919C495905CE523E31081098BAD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MaxPovver/NightQuest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7C095F7C3E424919C495905CE523E31081098BAD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7C095F7C3E424919C495905CE523E31081098BAD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NightQuest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
