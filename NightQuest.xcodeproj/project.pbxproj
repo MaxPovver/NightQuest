@@ -182,7 +182,7 @@
 						DevelopmentTeam = LP7FP795XW;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
