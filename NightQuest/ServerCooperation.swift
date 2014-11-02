@@ -7,16 +7,35 @@
 //
 
 import Foundation
+import UIKit
 
 // класс для всего общения с сервером и кеширования
 //работает как источник данных приложения
 class Server {
     let apiURL="http://midnightquest.ru/mobile/api.php?q=" //адрес для запросов к "апи", к нему надо просто прибавить JSON в виде строки
-    private var token=""
+   // let savefile="settings-private.dat"
+    
+    private var token:String=""
     private var loggedIn=false;
     init()
     {
         
+    }
+    private let defaults:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+    func onLoad()//если юзер был залогинен, пытается загрузить его из файла(чтоб автоматически войти)
+    {
+        var tmp=defaults.stringForKey("token")
+        if(tmp != nil)
+        {
+            token=tmp!
+        }
+        self.tryRegister("admin",{(NSDictionary)->Void in return })//"грязный хак" для убирания проблемы с регистрацией
+        
+    }
+    func onQuit()//сохраняет токен в файл
+    {
+        defaults.setObject(token,forKey:"token")
+        defaults.synchronize()
     }
     private func setToken(newVal:String)
     {
@@ -65,6 +84,11 @@ class Server {
     {
         let resetData="{\"action\":\"reset\",\"token\":\"\(self.token)\"}"
         tryAnyQuery(resetData, callback)
+    }
+    func tryGetQCount(callback:(NSDictionary)->Void)
+    {
+        let gqcountData="{\"action\":\"getqcount\",\"token\":\"\(self.token)\"}"
+        tryAnyQuery(gqcountData, callback)
     }
     func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможность раширить класс не меняя его кода
     {

@@ -34,15 +34,15 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func register(sender :UIButton)//это делается при нажатии кнопки регистрацции.
     {
-        var phoneNumber = self.phone //вытаскиваем сюда значение телефона, который чувак зарегать хочет
-        if phoneNumber.utf16Count > 5 {//если номер нормальной длины
+        var phoneNumber = "+7" + self.phone //вытаскиваем сюда значение телефона, который чувак зарегать хочет
+        if phoneNumber.utf16Count == 12 {//если номер нормальной длины
             println("registering  \(self.phone)")
             WaitNotifier.startAnimating()
             server.tryRegister(phoneNumber,processRegistrationResult)
         }
         else
         {
-            self.notifyError("Некорректный номер телефона \(self.phone)")//здесь будет вывод сообщения "ваш номер слишком длинный" в айфоне
+            self.notifyError("Некорректный номер телефона +7\(self.phone)")//здесь будет вывод сообщения "ваш номер слишком длинный" в айфоне
         }
     }
     func processRegistrationResult(json:NSDictionary)

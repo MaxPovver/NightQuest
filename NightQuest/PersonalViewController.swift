@@ -11,6 +11,8 @@ import UIKit
 
 class PersonalViewController: UIViewController {
     
+    @IBOutlet weak var Progress: UIActivityIndicatorView!
+    @IBOutlet weak var QuestsCounter: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,11 +29,6 @@ class PersonalViewController: UIViewController {
         println("logging out")
         server.tryLogout(processLogoutResult)
     }
-    @IBAction func reset(sender :UIButton)//это делается при нажатии кнопки входа.
-    {
-        println("resetting pass")
-        server.tryReset(processResetResult)
-    }
     func processLogoutResult(json:NSDictionary)
     {
         if (json["code"] as String != "ok" ){
@@ -42,6 +39,12 @@ class PersonalViewController: UIViewController {
             println("Logout OK!")
         }
     }
+    
+    @IBAction func reset(sender :UIButton)//это делается при нажатии кнопки входа.
+    {
+        println("resetting pass")
+        server.tryReset(processResetResult)
+    }
     func processResetResult(json:NSDictionary)
     {
         if (json["code"] as String != "ok" ){
@@ -50,6 +53,23 @@ class PersonalViewController: UIViewController {
         {
             self.performSegueWithIdentifier("PersonalToLogin", sender: self)
             println("Reset OK!")
+        }
+    }
+    
+    @IBAction func reloadQuestCount(sender :UIButton)//обновить кол-во оплаченных квестов
+    {
+        println("loading quests count")
+        Progress.startAnimating()
+        server.tryGetQCount(processResult)
+    }
+    func processResult(json: NSDictionary){
+        Progress.stopAnimating()
+        if(json["code"] as String=="ok")
+        {
+            QuestsCounter.text = (json["message"] as String)
+        } else {
+             self.performSegueWithIdentifier("PersonalToLogin", sender: self)
+            println("Impossible to get quests count, logging out...")
         }
     }
 }

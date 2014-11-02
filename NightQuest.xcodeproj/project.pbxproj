@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845F79381A06908B00DF2B8F /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F79371A06908B00DF2B8F /* PaymentViewController.swift */; };
 		84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610C1A029C4B004E5A78 /* AppDelegate.swift */; };
 		84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610E1A029C4B004E5A78 /* LoginViewController.swift */; };
 		84A161121A029C4B004E5A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A161101A029C4B004E5A78 /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		84A161171A029C4B004E5A78 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A161151A029C4B004E5A78 /* LaunchScreen.xib */; };
 		84A161231A029C4B004E5A78 /* NightQuestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A161221A029C4B004E5A78 /* NightQuestTests.swift */; };
 		84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1612C1A029C99004E5A78 /* ServerCooperation.swift */; };
+		84C2BF291A066BEC00142E9F /* settings-private.dat in Resources */ = {isa = PBXBuildFile; fileRef = 84C2BF281A066BEC00142E9F /* settings-private.dat */; };
 		84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55031A04C7C500D30171 /* PersonalViewController.swift */; };
 		84DF55061A04C7EE00D30171 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55051A04C7EE00D30171 /* RegisterViewController.swift */; };
 		84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55071A04CEC300D30171 /* MainViewController.swift */; };
@@ -30,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		845F79371A06908B00DF2B8F /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		84A161071A029C4B004E5A78 /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A1610B1A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A1610C1A029C4B004E5A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +44,7 @@
 		84A161211A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84A161221A029C4B004E5A78 /* NightQuestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightQuestTests.swift; sourceTree = "<group>"; };
 		84A1612C1A029C99004E5A78 /* ServerCooperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCooperation.swift; sourceTree = "<group>"; };
+		84C2BF281A066BEC00142E9F /* settings-private.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "settings-private.dat"; sourceTree = "<group>"; };
 		84DF55031A04C7C500D30171 /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		84DF55051A04C7EE00D30171 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		84DF55071A04CEC300D30171 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -85,17 +89,18 @@
 		84A161091A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXGroup;
 			children = (
-				84C2BF211A064CD400142E9F /* Segues */,
 				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 				84A1610C1A029C4B004E5A78 /* AppDelegate.swift */,
 				84DF55031A04C7C500D30171 /* PersonalViewController.swift */,
 				84DF55051A04C7EE00D30171 /* RegisterViewController.swift */,
 				84A1610E1A029C4B004E5A78 /* LoginViewController.swift */,
+				845F79371A06908B00DF2B8F /* PaymentViewController.swift */,
 				84A1612C1A029C99004E5A78 /* ServerCooperation.swift */,
 				84A161101A029C4B004E5A78 /* Main.storyboard */,
 				84A161131A029C4B004E5A78 /* Images.xcassets */,
 				84A161151A029C4B004E5A78 /* LaunchScreen.xib */,
 				84A1610A1A029C4B004E5A78 /* Supporting Files */,
+				84C2BF281A066BEC00142E9F /* settings-private.dat */,
 			);
 			path = NightQuest;
 			sourceTree = "<group>";
@@ -123,13 +128,6 @@
 				84A161211A029C4B004E5A78 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		84C2BF211A064CD400142E9F /* Segues */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Segues;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +180,11 @@
 					84A161061A029C4B004E5A78 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = LP7FP795XW;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
 					};
 					84A1611B1A029C4B004E5A78 = {
 						CreatedOnToolsVersion = 6.1;
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A161121A029C4B004E5A78 /* Main.storyboard in Resources */,
+				84C2BF291A066BEC00142E9F /* settings-private.dat in Resources */,
 				84A161171A029C4B004E5A78 /* LaunchScreen.xib in Resources */,
 				84A161141A029C4B004E5A78 /* Images.xcassets in Resources */,
 			);
@@ -233,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F79381A06908B00DF2B8F /* PaymentViewController.swift in Sources */,
 				84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */,
 				84DF55061A04C7EE00D30171 /* RegisterViewController.swift in Sources */,
 				84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */,

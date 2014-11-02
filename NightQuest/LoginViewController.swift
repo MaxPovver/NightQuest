@@ -35,8 +35,8 @@ class LoginViewController: UIViewController {
     }
     @IBAction func login(sender :UIButton)//это делается при нажатии кнопки входа.
     {
-        var phoneNumber = self.username //вытаскиваем сюда значение телефона, который чувак зарегать хочет
-            println("logging in as  \(self.username)")
+        var phoneNumber = "+7" + self.username //вытаскиваем сюда значение телефона, который чувак зарегать хочет
+            println("logging in as  \(phoneNumber)")
         WaitNotifier.startAnimating()
             server.tryLogin(phoneNumber,pass: self.password,processLoginResult)
     }
