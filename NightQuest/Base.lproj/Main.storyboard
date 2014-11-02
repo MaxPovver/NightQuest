@@ -25,7 +25,7 @@
                                     <rect key="frame" x="185" y="28" width="58" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="YgS-An-M2w" kind="custom" id="VEO-a1-kK0"/>
+                                    <segue destination="YgS-An-M2w" kind="show" id="VEO-a1-kK0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,13 +84,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="134" y="172" width="150" height="30"/>
+                                    <rect key="frame" x="134" y="142" width="150" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="register:" destination="87c-Fn-Trf" eventType="touchUpInside" id="wgZ-ud-lFE"/>
-                                    <segue destination="YgS-An-M2w" kind="custom" id="RwK-E9-2uv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMQ-ao-4r8">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="203" width="400" height="21"/>
+                                </variation>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t5G-yH-Bxy">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="190" y="180" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -98,6 +112,8 @@
                                 <exclude reference="jYE-Tm-sHo"/>
                                 <exclude reference="4VJ-ud-XgD"/>
                                 <exclude reference="HZB-NP-8nW"/>
+                                <exclude reference="HMQ-ao-4r8"/>
+                                <exclude reference="t5G-yH-Bxy"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -105,18 +121,25 @@
                                 <include reference="jYE-Tm-sHo"/>
                                 <include reference="4VJ-ud-XgD"/>
                                 <include reference="HZB-NP-8nW"/>
+                                <include reference="HMQ-ao-4r8"/>
+                                <include reference="t5G-yH-Bxy"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="WaitNotifier" destination="t5G-yH-Bxy" id="kD9-yp-dIu"/>
+                        <outlet property="regErrorLabel" destination="HMQ-ao-4r8" id="3jN-Qo-fWo"/>
+                        <segue destination="YgS-An-M2w" kind="show" identifier="RegisterToLogin" id="trC-9t-EQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="87c-Fn-Trf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2605.5" y="-169"/>
+            <point key="canvasLocation" x="2269.5" y="-960"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="mPH-zb-qDL">
             <objects>
-                <viewController id="YgS-An-M2w" customClass="LoginViewController" customModule="NightQuest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="YgS-An-M2w" customClass="LoginViewController" customModule="NightQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BSP-7F-t6G"/>
                         <viewControllerLayoutGuide type="bottom" id="MGX-E6-btU"/>
@@ -165,19 +188,6 @@
                                     <rect key="frame" x="131" y="256" width="224" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isp-ge-rhg">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Регистрация...">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="164" y="285" width="105" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="RT9-7y-jZG" kind="show" id="ARv-lV-xcf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZx-Kn-b3d">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Войти">
@@ -188,9 +198,42 @@
                                 </variation>
                                 <connections>
                                     <action selector="login:" destination="RjD-gM-z9L" eventType="touchUpInside" id="qlG-fV-R7P"/>
-                                    <segue destination="414-WA-J5G" kind="custom" id="YoV-nG-Tfq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c9a-4Q-7rW">
+                                <rect key="frame" x="219" y="490" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="200" y="334" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isp-ge-rhg">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Регистрация...">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="164" y="285" width="105" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="RT9-7y-jZG" kind="show" identifier="LoginToReg" id="RLH-hD-fp4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ошибка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtY-J3-KNy">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="215" width="368" height="21"/>
+                                </variation>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-kA-l1s">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="189" y="221" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -199,8 +242,10 @@
                                 <exclude reference="dcz-DC-Ids"/>
                                 <exclude reference="lbt-ds-7MT"/>
                                 <exclude reference="ueq-Kd-UCw"/>
-                                <exclude reference="isp-ge-rhg"/>
                                 <exclude reference="JZx-Kn-b3d"/>
+                                <exclude reference="isp-ge-rhg"/>
+                                <exclude reference="wtY-J3-KNy"/>
+                                <exclude reference="kgg-kA-l1s"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -209,15 +254,22 @@
                                 <include reference="dcz-DC-Ids"/>
                                 <include reference="lbt-ds-7MT"/>
                                 <include reference="ueq-Kd-UCw"/>
-                                <include reference="isp-ge-rhg"/>
                                 <include reference="JZx-Kn-b3d"/>
+                                <include reference="isp-ge-rhg"/>
+                                <include reference="wtY-J3-KNy"/>
+                                <include reference="kgg-kA-l1s"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="WaitNotifier" destination="kgg-kA-l1s" id="uSV-Nm-nVG"/>
+                        <outlet property="errorLabel" destination="wtY-J3-KNy" id="gz4-JF-Esl"/>
+                        <segue destination="414-WA-J5G" kind="show" identifier="LoginToPersonal" id="Z2t-gu-hhX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RjD-gM-z9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1500" y="-463"/>
+            <point key="canvasLocation" x="1548" y="-211"/>
         </scene>
         <!--Personal View Controller-->
         <scene sceneID="Xzr-mt-1mc">
@@ -250,7 +302,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="logout:" destination="WN9-0N-awy" eventType="touchUpInside" id="6uc-jJ-PTw"/>
-                                    <segue destination="YgS-An-M2w" kind="custom" id="mAm-DE-JNJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnE-3R-2Fg">
@@ -285,10 +336,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN9-0N-awy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2341.5" y="-993"/>
+            <point key="canvasLocation" x="2491.5" y="-211"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mAm-DE-JNJ"/>
+        <segue reference="trC-9t-EQU"/>
     </inferredMetricsTieBreakers>
 </document>

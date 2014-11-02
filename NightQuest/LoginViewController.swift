@@ -10,6 +10,10 @@ import UIKit
 
 
 class LoginViewController: UIViewController {
+    
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var WaitNotifier: UIActivityIndicatorView!
     var username = ""
     var password = ""
     override func viewDidLoad() {
@@ -32,23 +36,24 @@ class LoginViewController: UIViewController {
     @IBAction func login(sender :UIButton)//это делается при нажатии кнопки входа.
     {
         var phoneNumber = self.username //вытаскиваем сюда значение телефона, который чувак зарегать хочет
-        if phoneNumber.utf16Count > 5 {//если номер нормальной длины
             println("logging in as  \(self.username)")
+        WaitNotifier.startAnimating()
             server.tryLogin(phoneNumber,pass: self.password,processLoginResult)
-        }
-        else
-        {
-            println("incorrect number \(self.username)")//здесь будет вывод сообщения "ваш номер слишком длинный" в айфоне
-        }
     }
     func processLoginResult(json:NSDictionary)
     {
+        WaitNotifier.stopAnimating()
         if (json["code"] as String != "ok" ){
-            println(json["message"]? as String)
+            self.notifyError(json["message"]? as String)
         } else
         {
+            self.performSegueWithIdentifier("LoginToPersonal", sender: self)
             println("Login OK!")
         }
+    }
+    func notifyError(errorMsg:String)
+    {
+        self.errorLabel.text=errorMsg
     }
 }
 

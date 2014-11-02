@@ -11,7 +11,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var regErrorLabel: UILabel!
+    @IBOutlet weak var WaitNotifier: UIActivityIndicatorView!
+    @IBOutlet weak var ToLogin: UIButton!
+    
     var phone = ""
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +25,7 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func phoneEdited(sender :UITextField)
@@ -31,21 +37,28 @@ class RegisterViewController: UIViewController {
         var phoneNumber = self.phone //вытаскиваем сюда значение телефона, который чувак зарегать хочет
         if phoneNumber.utf16Count > 5 {//если номер нормальной длины
             println("registering  \(self.phone)")
+            WaitNotifier.startAnimating()
             server.tryRegister(phoneNumber,processRegistrationResult)
         }
         else
         {
-            println("incorrect number \(self.phone)")//здесь будет вывод сообщения "ваш номер слишком длинный" в айфоне
+            self.notifyError("Некорректный номер телефона \(self.phone)")//здесь будет вывод сообщения "ваш номер слишком длинный" в айфоне
         }
     }
     func processRegistrationResult(json:NSDictionary)
     {
+         WaitNotifier.stopAnimating()
         if (json["code"] as String != "ok" ){
-            println(json["message"] as String)
+            self.notifyError(json["message"] as String)
         } else
         {
+            self.performSegueWithIdentifier("RegisterToLogin", sender: self)
             println("Register OK. Wait for SMS with code")
         }
+    }
+    func notifyError(errormsg: String)
+    {
+        regErrorLabel.text=errormsg;
     }
 }
 
