@@ -21,5 +21,12 @@ class MainViewController: UIViewController {//контроллер главно�
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+   
+    @IBAction func AccountOpen(sender: AnyObject) {
+        if server.isLoggedIn() {
+            self.performSegueWithIdentifier("MainToPersonal",sender:self)
+        } else {
+            self.performSegueWithIdentifier("MainToLogin",sender:self)
+        }
+    }
 }

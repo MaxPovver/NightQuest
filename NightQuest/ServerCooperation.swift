@@ -24,30 +24,41 @@ class Server {
     private let defaults:NSUserDefaults=NSUserDefaults.standardUserDefaults()
     func onLoad()//если юзер был залогинен, пытается загрузить его из файла(чтоб автоматически войти)
     {
-        var tmp=defaults.stringForKey("token")
-        if(tmp != nil)
+        var tmp=NSUserDefaults.standardUserDefaults().stringForKey("token")
+        //println(tmp)
+        if(tmp != nil && !tmp!.isEmpty)
         {
-            token=tmp!
+            self.tryCheckLogin(tmp!,{(json:NSDictionary)->Void in var l=json["code"] as String=="ok"; if l {println("ok "+tmp!);self.setToken(tmp!)}else{self.unsetToken()}})
+        } else {
+            self.tryRegister("admin",{(NSDictionary)->Void in return })//"грязный хак" для убирания проблемы с регистрацией, если юзер уже зашел, не делаем его
         }
-        self.tryRegister("admin",{(NSDictionary)->Void in return })//"грязный хак" для убирания проблемы с регистрацией
         
     }
     func onQuit()//сохраняет токен в файл
     {
-        defaults.setObject(token,forKey:"token")
-        defaults.synchronize()
+        NSUserDefaults.standardUserDefaults().setObject(token,forKey:"token")
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     private func setToken(newVal:String)
     {
         self.token=newVal
+        NSUserDefaults.standardUserDefaults().setObject(token,forKey:"token")
+        NSUserDefaults.standardUserDefaults().synchronize()
         self.loggedIn=true
     }
     private func unsetToken()
     {
         self.token=""
+        NSUserDefaults.standardUserDefaults().setObject(token,forKey:"token")
+        NSUserDefaults.standardUserDefaults().synchronize()
         self.loggedIn=false
     }
     func isLoggedIn()->Bool{return self.loggedIn}
+    func tryCheckLogin(temp:String,callback:(NSDictionary)->Void)
+    {
+        let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(temp)\"}"
+        tryAnyQuery(checkData, callback)
+    }
     func tryRegister(phone: NSString,callback:(NSDictionary)->Void)
     {
         let registerData="{\"action\":\"register\",\"username\":\"\(phone)\"}"

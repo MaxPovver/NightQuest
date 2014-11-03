@@ -13,34 +13,33 @@
                         <viewControllerLayoutGuide type="bottom" id="7oY-HA-NMF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ckO-F5-PkS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrP-hq-saK">
-                                <rect key="frame" x="125" y="28" width="124" height="30"/>
+                                <rect key="frame" x="7" y="0.0" width="258" height="83"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Аккаунт"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="182" y="209" width="61" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="YgS-An-M2w" kind="show" id="VEO-a1-kK0"/>
+                                    <action selector="AccountOpen:" destination="bgU-Fs-6So" eventType="touchUpInside" id="vrE-FE-x9q"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <exclude reference="CrP-hq-saK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="1024" height="768"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="YgS-An-M2w" kind="show" identifier="MainToLogin" id="Yhj-xM-SwK"/>
+                        <segue destination="414-WA-J5G" kind="show" identifier="MainToPersonal" id="Me9-cR-Hea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCx-zY-DBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="657" y="36"/>
+            <point key="canvasLocation" x="656" y="35"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="FKg-hv-31z">
@@ -51,7 +50,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tK4-8J-ivd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QGf-1P-m1h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Регистрация" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYE-Tm-sHo">
@@ -114,7 +113,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="widthClass=compact"/>
                     </view>
                     <connections>
                         <outlet property="WaitNotifier" destination="t5G-yH-Bxy" id="kD9-yp-dIu"/>
@@ -135,7 +133,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MGX-E6-btU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gI3-xd-L3l">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вход" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFz-4j-WPg">
@@ -229,7 +227,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="widthClass=compact"/>
                     </view>
                     <connections>
                         <outlet property="WaitNotifier" destination="kgg-kA-l1s" id="uSV-Nm-nVG"/>
@@ -250,7 +247,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fww-UZ-ZUM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2gb-al-d0S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AOf-5d-zNu">
@@ -336,7 +333,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="widthClass=compact"/>
                     </view>
                     <connections>
                         <outlet property="Progress" destination="AOf-5d-zNu" id="cWT-az-ebe"/>
@@ -358,7 +354,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cvs-DJ-5yy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hX3-Qg-w6s">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -369,6 +365,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="trC-9t-EQU"/>
+        <segue reference="Yhj-xM-SwK"/>
+        <segue reference="Me9-cR-Hea"/>
     </inferredMetricsTieBreakers>
 </document>
