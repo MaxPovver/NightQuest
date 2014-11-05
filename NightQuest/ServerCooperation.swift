@@ -16,6 +16,7 @@ class Server {
    // let savefile="settings-private.dat"
     
     private var token:String=""
+    private var phone:String=""
     private var loggedIn=false;
     init()
     {
@@ -32,17 +33,26 @@ class Server {
         } else {
             self.tryRegister("admin",{(NSDictionary)->Void in return })//"грязный хак" для убирания проблемы с регистрацией, если юзер уже зашел, не делаем его
         }
+        var ph=NSUserDefaults.standardUserDefaults().stringForKey("phone")
+        if ph != nil && !ph!.isEmpty {
+            self.phone=ph!
+        }
         
+    }
+    func getPhone()->String {
+        return self.phone
     }
     func onQuit()//сохраняет токен в файл
     {
         NSUserDefaults.standardUserDefaults().setObject(token,forKey:"token")
+        NSUserDefaults.standardUserDefaults().setObject(phone,forKey:"phone")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     private func setToken(newVal:String)
     {
         self.token=newVal
         NSUserDefaults.standardUserDefaults().setObject(token,forKey:"token")
+        NSUserDefaults.standardUserDefaults().setObject(phone,forKey:"phone")
         NSUserDefaults.standardUserDefaults().synchronize()
         self.loggedIn=true
     }
@@ -71,6 +81,7 @@ class Server {
         {
             if json["code"] as String=="ok"
             {
+                self.phone=phone
                 self.setToken(json["token"] as String)
             }
             callback(json)
@@ -101,10 +112,33 @@ class Server {
         let gqcountData="{\"action\":\"getqcount\",\"token\":\"\(self.token)\"}"
         tryAnyQuery(gqcountData, callback)
     }
-    func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможность раширить класс не меняя его кода
+    func tryGetQuestsList(select:String, callback:(NSDictionary)->Void)
     {
-        let registerData=data;
-        let registerURL=(self.apiURL + registerData)
+        let qlData="{\"action\":\"get\",\"what\":\"quests\",\"select\":\"\(select)\",\"columns\":\"name,time,id\"}";//,\"token\":\"\(self.token)\"}"
+        tryAnyQuery(qlData, callback)
+    }
+    func tryGetQuest(id: String,callback:(NSDictionary)->Void)
+    {
+        let qData="{\"action\":\"get\",\"what\":\"quest\",\"id\":\"\(id)\"}";//\"token\":\"\(self.token)\"}"
+        tryAnyQuery(qData, callback)
+    }
+    func typeNameForID(id: String)->String { // переводит тип квеста в читабельное название, потом надо будет синхронихировать с сервером
+       /* $types[0]="Неизвестный тип квеста";
+        $types[1]="Оригинальный";
+        $types[2]="Фотоохота";
+        $types[3]="Отгадал загадку и приехал на адрес раньше всех";
+        $types[4]="Классика";*/
+        let allowed = ["1":"Оригинальный","2":"Фотоохота","3":"Отгадал загадку и приехал на адрес раньше всех","4":"Классика"]
+        let tmp = allowed[id]
+        if tmp != nil {
+            return tmp!
+        } else {
+            return "Неизвестный тип"
+        }
+    }
+    func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможности расширить класс не меняя его кода
+    {
+        let registerURL=(self.apiURL + data)
         let tmp = registerURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let encoded = tmp?.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
         println(registerURL+"="+encoded!)
