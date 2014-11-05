@@ -53,5 +53,24 @@ class QuestViewController: UIViewController {
     }
     /*алгоритм проверок такой: 1) залогинен? 2) уже купил этот квест? 3) достаточно денег?*/
     @IBAction func BuyBtnPressed(sender: AnyObject) {
+        Progress.startAnimating()
+        server.tryCheckLogin( OnLoginChecked)//проверим логин
+    }
+    func OnLoginChecked(json:NSDictionary)
+    {
+        if json["code"] as String != "ok" {//если не залогинен, сообщим об этом
+            Progress.stopAnimating()//и покажем, что операций больше не выполняется
+            ErrorNotify.text = "Войдите, чтобы делать покупки"
+        } else {//иначе попытаемся купить
+            server.tryBuy(myID,OnBuy)
+        }
+    }
+    func OnBuy(json:NSDictionary) {
+          Progress.stopAnimating()
+        if json["code"] as String == "ok" {//если покупка удалась
+            performSegueWithIdentifier("QuestToQuests", sender: self)//вернемся обратно в список квестов
+        } else {
+            ErrorNotify.text = json["message"] as String//иначе вывдем сообщение сервера о причине, по которой покупка не получится
+         }
     }
 }

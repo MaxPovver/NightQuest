@@ -69,10 +69,20 @@ class Server {
         let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(temp)\"}"
         tryAnyQuery(checkData, callback)
     }
+    func tryCheckLogin(callback:(NSDictionary)->Void)
+    {
+        let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(self.token)\"}"
+        tryAnyQuery(checkData, callback)
+    }
     func tryRegister(phone: NSString,callback:(NSDictionary)->Void)
     {
         let registerData="{\"action\":\"register\",\"username\":\"\(phone)\"}"
         tryAnyQuery(registerData, callback)
+    }
+    func tryBuy(questID: String,callback: NSDictionary -> Void)
+    {
+        let buyData="{\"action\":\"buy\",\"qid\":\"\(questID)\",\"token\":\"\(self.token)\"}"
+        tryAnyQuery(buyData, callback)
     }
     func tryLogin(phone: NSString,pass: NSString,callback:(NSDictionary)->Void)
     {
