@@ -68,7 +68,7 @@ class PersonalViewController: UIViewController {
         Progress.stopAnimating()
         if(json["code"] as String=="ok")
         {
-            QuestsCounter.text = (json["message"] as String)
+            QuestsCounter.text = "Квестов оплачено: " + (json["message"] as String)
         } else {
              self.performSegueWithIdentifier("PersonalToLogin", sender: self)
             println("Impossible to get quests count, logging out...")

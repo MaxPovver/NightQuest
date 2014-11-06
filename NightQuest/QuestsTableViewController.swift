@@ -58,7 +58,7 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.quests != nil {
             println(self.quests!.count)
-            return self.quests!.count
+            return self.quests!.count+2
         } else {
             return 0
         }
@@ -66,17 +66,28 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        if(indexPath.row < quests!.count)
+        {
         let ok = quests!
         let a:String = (ok[indexPath.row] as [String:String])["name"]!
         let b:String = (ok[indexPath.row] as [String:String])["time"]!
         cell.textLabel.text = a + " (" + b + ") "
-        
+        } else  if indexPath.row == quests!.count
+            { cell.textLabel.text = "Купить квесты..." }
+        else if indexPath.row == quests!.count+1
+            { cell.textLabel.text = "На главную..." }
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(indexPath.row < quests!.count)
+        {
         let ok = quests!
         choosenID = (ok[indexPath.row] as [String:String])["id"]!
         self.performSegueWithIdentifier("QuestsToQuest",sender: self)
+        } else  if indexPath.row == quests!.count
+        { self.performSegueWithIdentifier("QuestsToPayment",sender: self) }
+        else if indexPath.row == quests!.count+1
+        { self.performSegueWithIdentifier("QuestsToMain",sender: self) }
     }
 }
