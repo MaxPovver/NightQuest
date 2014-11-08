@@ -119,7 +119,7 @@ class Server {
     }
     func tryGetQCount(callback:(NSDictionary)->Void)
     {
-        let gqcountData="{\"action\":\"getqcount\",\"token\":\"\(self.token)\"}"
+        let gqcountData="{\"action\":\"get\",\"what\":\"qcount\"\"token\":\"\(self.token)\"}"
         tryAnyQuery(gqcountData, callback)
     }
     func tryGetQuestsList(select:String, callback:(NSDictionary)->Void)
@@ -151,7 +151,7 @@ class Server {
         let registerURL=(self.apiURL + data)
         let tmp = registerURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let encoded = tmp?.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        println(registerURL+"="+encoded!)
+        println(registerURL/*+"="+encoded!*/)
         var url: NSURL = NSURL(string: encoded!)!
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
