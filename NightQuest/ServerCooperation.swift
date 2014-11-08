@@ -119,7 +119,7 @@ class Server {
     }
     func tryGetQCount(callback:(NSDictionary)->Void)
     {
-        let gqcountData="{\"action\":\"get\",\"what\":\"qcount\"\"token\":\"\(self.token)\"}"
+        let gqcountData="{\"action\":\"get\",\"what\":\"qcount\",\"token\":\"\(self.token)\"}"
         tryAnyQuery(gqcountData, callback)
     }
     func tryGetQuestsList(select:String, callback:(NSDictionary)->Void)
