@@ -16,7 +16,7 @@ class QuestViewController: UIViewController {
     @IBOutlet weak var QDescription: UILabel!
     @IBOutlet weak var QTime: UILabel!
     @IBOutlet weak var QLength: UILabel!
-    @IBOutlet weak var ErrorNotify: UILabel!
+ //   @IBOutlet weak var ErrorNotify: UILabel!
     @IBOutlet weak var Progress: UIActivityIndicatorView!
     @IBOutlet weak var QType: UILabel!
     
@@ -48,7 +48,7 @@ class QuestViewController: UIViewController {
             QLength.text = quest["length"]
             QType.text = server.typeNameForID(quest["type"]!)
         } else {
-            ErrorNotify.text = "Не удалось загрузить квест!"
+             notifyError("Не удалось загрузить квест!")
         }
     }
     /*алгоритм проверок такой: 1) залогинен? 2) уже купил этот квест? 3) достаточно денег?*/
@@ -60,7 +60,7 @@ class QuestViewController: UIViewController {
     {
         if json["code"] as String != "ok" {//если не залогинен, сообщим об этом
             Progress.stopAnimating()//и покажем, что операций больше не выполняется
-            ErrorNotify.text = "Войдите, чтобы делать покупки"
+            notifyError( "Войдите, чтобы делать покупки" )
         } else {//иначе попытаемся купить
             server.tryBuy(myID,OnBuy)
         }
@@ -70,7 +70,18 @@ class QuestViewController: UIViewController {
         if json["code"] as String == "ok" {//если покупка удалась
             performSegueWithIdentifier("QuestToQuests", sender: self)//вернемся обратно в список квестов
         } else {
-            ErrorNotify.text = json["message"] as String//иначе вывдем сообщение сервера о причине, по которой покупка не получится
+            notifyError(json["message"] as String)//иначе вывдем сообщение сервера о причине, по которой покупка не получится
          }
+    }
+    func notifyError(errorMsg:String)
+    {
+        let alert = UIAlertController(title: "Ошибка", message: errorMsg, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK",
+            style: UIAlertActionStyle.Default,
+            handler: {
+                (alert: UIAlertAction!) in return
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
