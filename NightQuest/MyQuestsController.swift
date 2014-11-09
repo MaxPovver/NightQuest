@@ -24,7 +24,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
     {*/
     //var quets = ["We", "Heart", "Swift"]
     var questsNew,questsNow,questsOld:[[String:String]]?
-    var choosenID="0"
+    var choosenQuest:[String:String]?
     
     @IBOutlet weak var QTable: UITableView!
     
@@ -34,9 +34,26 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
-        server.tryCheckLogin(loginChecked)
+        server.tryCheckQuestNow(OnQNCheck)//а вдруг уже квест идет? тогда сразу кидаем на его страничку
+       // server.tryCheckLogin(loginChecked)
     }
-    
+    func OnQNCheck(json:NSDictionary)
+    {
+        if json["code"] as String == "ok" {
+            if json["message"] as String == "yes" //только если юзер уже имеет реальный квест
+            {
+                choosenQuest = json["current"] as [String:String]
+                performSegueWithIdentifier("MQToPlay", sender: self)
+            }else {server.tryCheckLogin(loginChecked)}
+        }else {server.tryCheckLogin(loginChecked)}
+        
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "MQToPlay") {
+            let vc = segue.destinationViewController as Quest
+            vc.myQuest = choosenQuest!
+        }
+    }
     func loginChecked(json:NSDictionary)
     {
         if json["code"] as String == "ok" {
@@ -60,7 +77,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         } else {
             println("error getting quests")
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = l1&&l2&&l3
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = !(l1&&l2&&l3)
     }
     func OnNowQListRecived(json:NSDictionary)
     {
@@ -71,7 +88,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         } else {
             println("error getting quests")
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = l1&&l2&&l3
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = !(l1&&l2&&l3)
     }
     func OnOldQListRecived(json:NSDictionary)
     {
@@ -82,7 +99,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         } else {
             println("error getting quests")
         }
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = l1&&l2&&l3
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = !(l1&&l2&&l3)
     }
     
     override func didReceiveMemoryWarning() {
@@ -176,12 +193,12 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
             default:
                 let source = questsNew
             }
-                choosenID = source![indexPath.row]["id"]!
+                choosenQuest = source![indexPath.row]
                 self.performSegueWithIdentifier("MyQuestsToMyQuest",sender: self)
         
         case 3:
             if indexPath.row == 0 {
-                performSegueWithIdentifier("QuestsToPayment",sender: self)
+                performSegueWithIdentifier("MyQuestsToPayment",sender: self)
             }
         default:
             println("")

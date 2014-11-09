@@ -41,7 +41,7 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         if json["code"] as String == "ok" {
             var err: NSError?
-            quests = json["quests"] as [[String:String]]
+            quests = json["quests"] as [[String:String]]?
             QTable.reloadData()
         } else {
             println("error getting quests")
@@ -102,7 +102,6 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     if indexPath.section == 0 {
         if indexPath.row < quests!.count
         {
-            let ok = quests!
             choosenID = quests![indexPath.row]["id"]!
                 performSegueWithIdentifier("QuestsToQuest",sender: self)
         }

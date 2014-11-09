@@ -151,6 +151,20 @@ class Server {
             return "Неизвестный тип"
         }
     }
+    func tryGetRiddles(qid: String,callback:(NSDictionary)->Void)
+    {
+        let qData="{\"action\":\"get\",\"what\":\"riddles\",\"qid\":\"\(qid)\",\"token\":\"\(self.token)\"}";
+        tryAnyQuery(qData, callback)
+    }
+    func tryGetExtraRiddles(qid: String,callback:(NSDictionary)->Void)
+    {
+        let qData="{\"action\":\"get\",\"what\":\"extrariddles\",\"qid\":\"\(qid)\",\"token\":\"\(self.token)\"}";
+        tryAnyQuery(qData, callback)
+    }
+    func tryCheckQuestNow(callback:(NSDictionary)->Void) {
+        let qData="{\"action\":\"check\",\"what\":\"questnow\",\"token\":\"\(self.token)\"}";
+        tryAnyQuery(qData, callback)
+    }
     func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможности расширить класс не меняя его кода
     {
         let registerURL=(self.apiURL + data)
