@@ -16,7 +16,6 @@ class QuestViewController: UIViewController {
     @IBOutlet weak var QDescription: UILabel!
     @IBOutlet weak var QTime: UILabel!
     @IBOutlet weak var QLength: UILabel!
- //   @IBOutlet weak var ErrorNotify: UILabel!
     @IBOutlet weak var Progress: UIActivityIndicatorView!
     @IBOutlet weak var QType: UILabel!
     
@@ -24,9 +23,6 @@ class QuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-     /*   UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-        style:UIBarButtonItemStyleDone target:nil action:nil];
-        */
         var rightButton = UIBarButtonItem(title: "Купить", style: .Done, target: self, action: "BuyBtnPressed")
         self.navigationItem.rightBarButtonItem = rightButton
         Progress.startAnimating()
@@ -42,11 +38,7 @@ class QuestViewController: UIViewController {
     func OnQuestRecived(json:NSDictionary) {
         Progress.stopAnimating()
         if json["code"] as String == "ok" {
-            var err:NSError?
-            let jsonObject = NSJSONSerialization.JSONObjectWithData(
-                (json["quest"] as String).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!,
-                options: NSJSONReadingOptions.MutableContainers, error: &err)
-            let quest = jsonObject as [String:String]
+            let quest = json["quest"]  as [String:String]
             QName.text = quest["name"]
             QDescription.text = quest["description"]
             QTime.text = quest["time"]

@@ -1,18 +1,19 @@
 //
-//  QuestsTableViewController.swift
+//  MyQuestsController.swift
 //  NightQuest
 //
-//  Created by Admin on 05.11.14.
+//  Created by Admin on 09.11.14.
 //  Copyright (c) 2014 NightQuest. All rights reserved.
 //
 
 import Foundation
+
 import UIKit
 
-class QuestsTableViewController :UITableViewController, UITableViewDelegate, UITableViewDataSource {
-
+class MyQuestsController :UITableViewController, UITableViewDelegate, UITableViewDataSource {
+    
     required init(coder aDecoder: NSCoder) {
-       // fatalError("init(coder:) has not been implemented")
+        // fatalError("init(coder:) has not been implemented")
         super.init(coder:aDecoder)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         server.tryGetQuestsList("new",callback: OnQListRecived)
@@ -20,15 +21,15 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     /*required init(style:)
     {*/
     //var quets = ["We", "Heart", "Swift"]
-    var quests:[[String:String]]?
+    var quests:[[String:AnyObject]]?
     var choosenID="0"
     @IBOutlet var QTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-   //     // Do any additional setup after loading the view, typically from a nib.
-   /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
-      //  Progress.startAnimating()
-       // QTable.style = UITableViewStyle.
+        //     // Do any additional setup after loading the view, typically from a nib.
+        /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
+        //  Progress.startAnimating()
+        // QTable.style = UITableViewStyle.
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "QuestsToQuest") {
@@ -41,7 +42,10 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         if json["code"] as String == "ok" {
             var err: NSError?
-            quests = json["quests"] as [[String:String]]
+            let jsonObject = NSJSONSerialization.JSONObjectWithData(
+                (json["quests"] as String).dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)!,
+                options: NSJSONReadingOptions.MutableContainers, error: &err)
+            quests = jsonObject! as [[String:AnyObject]]
             QTable.reloadData()
         } else {
             println("error getting quests")
@@ -59,12 +63,12 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-        if self.quests != nil {
-           // println(self.quests!.count)
-            return self.quests!.count
-        } else {
-            return 0
-        }
+            if self.quests != nil {
+                // println(self.quests!.count)
+                return self.quests!.count
+            } else {
+                return 0
+            }
         } else if section == 1
         {
             return 1
@@ -74,19 +78,22 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("QCell") as UITableViewCell
         if indexPath.section == 0 {
-            if quests != nil && indexPath.row < quests!.count
+            if(quests != nil && indexPath.row < quests!.count)
             {
-                cell.textLabel.text = quests![indexPath.row]["name"]!
-                cell.detailTextLabel!.text =  quests![indexPath.row]["time"]!
+                let ok = quests!
+                let a:String = (ok[indexPath.row] as [String:String])["name"]!
+                let b:String = (ok[indexPath.row] as [String:String])["time"]!
+                cell.textLabel.text = a
+                cell.detailTextLabel!.text =  b
             }
         }
         if quests != nil {
-        if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                cell.textLabel.text = "Купить квесты"
-                cell.detailTextLabel!.text = ""
+            if indexPath.section == 1 {
+                if indexPath.row == 0 {
+                    cell.textLabel.text = "Купить квесты"
+                    cell.detailTextLabel!.text = ""
+                }
             }
-          }
         }
         return cell
     }
@@ -99,14 +106,14 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
         return nil
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    if indexPath.section == 0 {
-        if indexPath.row < quests!.count
-        {
-            let ok = quests!
-            choosenID = quests![indexPath.row]["id"]!
-                performSegueWithIdentifier("QuestsToQuest",sender: self)
-        }
-    } else if indexPath.section == 1 {
+        if indexPath.section == 0 {
+            if indexPath.row < quests!.count
+            {
+                let ok = quests!
+                choosenID = (ok[indexPath.row] as [String:String])["id"]!
+                self.performSegueWithIdentifier("QuestsToQuest",sender: self)
+            }
+        } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 performSegueWithIdentifier("QuestsToPayment",sender: self)
             }

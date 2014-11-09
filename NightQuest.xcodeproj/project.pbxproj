@@ -17,6 +17,7 @@
 		84A1612D1A029C99004E5A78 /* ServerCooperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1612C1A029C99004E5A78 /* ServerCooperation.swift */; };
 		84C130611A0A8FB00099E0D4 /* QuestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C130601A0A8FB00099E0D4 /* QuestsTableViewController.swift */; };
 		84C130631A0A953D0099E0D4 /* QuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C130621A0A953D0099E0D4 /* QuestViewController.swift */; };
+		84D4E3F31A0F30020003F515 /* MyQuestsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4E3F21A0F30020003F515 /* MyQuestsController.swift */; };
 		84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55031A04C7C500D30171 /* PersonalViewController.swift */; };
 		84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF55071A04CEC300D30171 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		84A1612C1A029C99004E5A78 /* ServerCooperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCooperation.swift; sourceTree = "<group>"; };
 		84C130601A0A8FB00099E0D4 /* QuestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestsTableViewController.swift; sourceTree = "<group>"; };
 		84C130621A0A953D0099E0D4 /* QuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestViewController.swift; sourceTree = "<group>"; };
+		84D4E3F21A0F30020003F515 /* MyQuestsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestsController.swift; sourceTree = "<group>"; };
 		84DF55031A04C7C500D30171 /* PersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
 		84DF55071A04CEC300D30171 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 				84C130621A0A953D0099E0D4 /* QuestViewController.swift */,
 				84C130601A0A8FB00099E0D4 /* QuestsTableViewController.swift */,
+				84D4E3F21A0F30020003F515 /* MyQuestsController.swift */,
 				84A1610C1A029C4B004E5A78 /* AppDelegate.swift */,
 				84DF55031A04C7C500D30171 /* PersonalViewController.swift */,
 				84A1610E1A029C4B004E5A78 /* LoginViewController.swift */,
@@ -240,6 +243,7 @@
 				84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */,
 				84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */,
 				84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */,
+				84D4E3F31A0F30020003F515 /* MyQuestsController.swift in Sources */,
 				84C130631A0A953D0099E0D4 /* QuestViewController.swift in Sources */,
 				84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */,
 				84C130611A0A8FB00099E0D4 /* QuestsTableViewController.swift in Sources */,
