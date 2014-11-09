@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8443367B1A0F6D9900099A49 /* MyQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443367A1A0F6D9900099A49 /* MyQuestViewController.swift */; };
 		8443367D1A0F6E7600099A49 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443367C1A0F6E7600099A49 /* Quest.swift */; };
+		844336841A0FB02800099A49 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844336831A0FB02800099A49 /* PushKit.framework */; };
 		845F79381A06908B00DF2B8F /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F79371A06908B00DF2B8F /* PaymentViewController.swift */; };
 		84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610C1A029C4B004E5A78 /* AppDelegate.swift */; };
 		84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610E1A029C4B004E5A78 /* LoginViewController.swift */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		8443367A1A0F6D9900099A49 /* MyQuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestViewController.swift; sourceTree = "<group>"; };
 		8443367C1A0F6E7600099A49 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		8443367E1A0FAD4E00099A49 /* NightQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NightQuest.entitlements; sourceTree = "<group>"; };
+		844336831A0FB02800099A49 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		845F79371A06908B00DF2B8F /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		84A161071A029C4B004E5A78 /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A1610B1A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844336841A0FB02800099A49 /* PushKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +81,7 @@
 		84A160FE1A029C4B004E5A78 = {
 			isa = PBXGroup;
 			children = (
+				844336831A0FB02800099A49 /* PushKit.framework */,
 				84A161091A029C4B004E5A78 /* NightQuest */,
 				84A1611F1A029C4B004E5A78 /* NightQuestTests */,
 				84A161081A029C4B004E5A78 /* Products */,
@@ -95,6 +100,7 @@
 		84A161091A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXGroup;
 			children = (
+				8443367E1A0FAD4E00099A49 /* NightQuest.entitlements */,
 				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 				84C130621A0A953D0099E0D4 /* QuestViewController.swift */,
 				84C130601A0A8FB00099E0D4 /* QuestsTableViewController.swift */,
@@ -190,7 +196,19 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = LP7FP795XW;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
 								enabled = 0;
 							};
 						};
@@ -380,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NightQuest/NightQuest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NightQuest/Info.plist;
@@ -393,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NightQuest/NightQuest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = NightQuest/Info.plist;

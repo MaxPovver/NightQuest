@@ -46,9 +46,6 @@
                                 <state key="normal" title="Играть!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hI5-LT-AAh" kind="show" id="Aag-ud-WuQ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,6 +70,7 @@
                     <connections>
                         <segue destination="YgS-An-M2w" kind="show" identifier="MainToLogin" id="Yhj-xM-SwK"/>
                         <segue destination="414-WA-J5G" kind="show" identifier="MainToPersonal" id="Me9-cR-Hea"/>
+                        <segue destination="hI5-LT-AAh" kind="show" id="Y7a-QD-IbK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCx-zY-DBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,7 +115,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="QTable" destination="0x8-yr-4Nd" id="jtk-Ns-pOI"/>
-                        <segue destination="EVq-bb-HJp" kind="showDetail" identifier="MQToPlay" id="caR-K1-8DR"/>
+                        <segue destination="EVq-bb-HJp" kind="show" identifier="MQToPlay" id="caR-K1-8DR"/>
                         <segue destination="YgS-An-M2w" kind="show" identifier="MQuestsToLogin" id="izB-Mc-SUV"/>
                         <segue destination="1YO-Wn-Mt1" kind="show" identifier="MQuestsToPayment" id="kQs-n9-xiR"/>
                     </connections>
@@ -594,6 +592,51 @@
             </objects>
             <point key="canvasLocation" x="2212" y="1024"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="IET-Qo-z0q">
+            <objects>
+                <viewController id="ri8-8a-oZG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSd-9d-bys"/>
+                        <viewControllerLayoutGuide type="bottom" id="58q-hw-5DP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b1a-ka-cEp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Загадка #0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlP-mY-4ro">
+                                <rect key="frame" x="116" y="20" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Описание" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGk-Qp-PIY">
+                                <rect key="frame" x="121" y="49" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ввести код" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8F-MG-50a">
+                                <rect key="frame" x="50" y="85" width="221" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA7-lT-tqY">
+                                <rect key="frame" x="122" y="129" width="77" height="30"/>
+                                <state key="normal" title="Отправить">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="320"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3r-q2-nOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2702" y="902"/>
+        </scene>
         <!--Оплата-->
         <scene sceneID="hbG-dS-7Bt">
             <objects>
@@ -671,8 +714,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sXG-6r-q8D"/>
-        <segue reference="izB-Mc-SUV"/>
+        <segue reference="Me9-cR-Hea"/>
         <segue reference="kQs-n9-xiR"/>
-        <segue reference="Z2t-gu-hhX"/>
+        <segue reference="izB-Mc-SUV"/>
     </inferredMetricsTieBreakers>
 </document>
