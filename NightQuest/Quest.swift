@@ -149,7 +149,8 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
             choosenID = source![indexPath.row]["id"]!
             self.performSegueWithIdentifier("MyQuestsToMyQuest",sender: self)*/
-            println("riddle tap")
+            performSegueWithIdentifier("RiddlesToRiddle",sender: self)
+            break
         default:
             println("unknown tap")
         }

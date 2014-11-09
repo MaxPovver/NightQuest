@@ -34,19 +34,8 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
-        server.tryCheckQuestNow(OnQNCheck)//а вдруг уже квест идет? тогда сразу кидаем на его страничку
+       //а вдруг уже квест идет? тогда сразу кидаем на его страничку
        // server.tryCheckLogin(loginChecked)
-    }
-    func OnQNCheck(json:NSDictionary)
-    {
-        if json["code"] as String == "ok" {
-            if json["message"] as String == "yes" //только если юзер уже имеет реальный квест
-            {
-                choosenQuest = json["current"] as [String:String]
-                performSegueWithIdentifier("MQToPlay", sender: self)
-            }else {server.tryCheckLogin(loginChecked)}
-        }else {server.tryCheckLogin(loginChecked)}
-        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "MQToPlay") {
