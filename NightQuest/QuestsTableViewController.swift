@@ -25,8 +25,8 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     @IBOutlet var QTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-       // self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")
+   //     // Do any additional setup after loading the view, typically from a nib.
+   /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
       //  Progress.startAnimating()
        // QTable.style = UITableViewStyle.
     }
@@ -56,7 +56,6 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
         
         // Dispose of any resources that can be recreated.
     }
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -78,15 +77,22 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("QCell") as UITableViewCell
         if indexPath.section == 0 {
-            if(indexPath.row < quests!.count)
+            if(quests != nil && indexPath.row < quests!.count)
             {
                 let ok = quests!
                 let a:String = (ok[indexPath.row] as [String:String])["name"]!
                 let b:String = (ok[indexPath.row] as [String:String])["time"]!
-                cell.textLabel.text = a + " (" + b + ") "
+                cell.textLabel.text = a
+                cell.detailTextLabel!.text =  b
             }
-        } else if indexPath.section == 1 {
-            cell.textLabel.text = "Купить квесты"
+        }
+        if quests != nil {
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                cell.textLabel.text = "Купить квесты"
+                cell.detailTextLabel!.text = ""
+            }
+          }
         }
         return cell
     }
