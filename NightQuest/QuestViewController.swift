@@ -24,6 +24,11 @@ class QuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+     /*   UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+        style:UIBarButtonItemStyleDone target:nil action:nil];
+        */
+        var rightButton = UIBarButtonItem(title: "Купить", style: .Done, target: self, action: "BuyBtnPressed")
+        self.navigationItem.rightBarButtonItem = rightButton
         Progress.startAnimating()
         server.tryGetQuest(myID,OnQuestRecived)
     }
@@ -45,14 +50,14 @@ class QuestViewController: UIViewController {
             QName.text = quest["name"]
             QDescription.text = quest["description"]
             QTime.text = quest["time"]
-            QLength.text = quest["length"]
+            QLength.text = "(" + quest["length"]! + ")"
             QType.text = server.typeNameForID(quest["type"]!)
         } else {
              notifyError("Не удалось загрузить квест!")
         }
     }
     /*алгоритм проверок такой: 1) залогинен? 2) уже купил этот квест? 3) достаточно денег?*/
-    @IBAction func BuyBtnPressed(sender: AnyObject) {
+    @IBAction func BuyBtnPressed() {
         Progress.startAnimating()
         server.tryCheckLogin( OnLoginChecked)//проверим логин
     }
