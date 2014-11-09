@@ -24,6 +24,8 @@ class PaymentViewController: UIViewController,UIWebViewDelegate {
        // var url =  NSURL(string:"http://midnightquest.ru/personal.html")!
         var request = NSURLRequest(URL: url)
         Browser.delegate = self //тут скорее всего утчека памяти
+        //Browser.loadHTMLString("<!doctype html><html><body><div style=\"width: 100%%; text-align: center; font-size: 36pt;\">Loading...</div></body></html>", baseURL: url)
+     //   Browser.
         Browser.loadRequest(request)
         //Browser.scalesPageToFit = true
       //  Browser.loadHTMLString("payment.html",baseURL: NSURL(string:"http://midnightquest/")!)

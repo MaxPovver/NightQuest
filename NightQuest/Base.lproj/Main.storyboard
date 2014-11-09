@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50L-JP-L1L">
-                                <rect key="frame" x="96" y="56" width="129" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50L-JP-L1L">
+                                <rect key="frame" x="96" y="145" width="129" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Аккаунт">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,8 +27,15 @@
                                     <action selector="AccountOpen:" destination="bgU-Fs-6So" eventType="touchUpInside" id="Pi0-Is-mNk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzQ-md-c1p">
-                                <rect key="frame" x="101" y="143" width="119" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xG4-4X-gGm">
+                                <rect key="frame" x="64" y="74" width="192" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Мои квесты">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzQ-md-c1p">
+                                <rect key="frame" x="101" y="220" width="119" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Квесты">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,10 +47,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="50L-JP-L1L" firstAttribute="centerX" secondItem="zNX-Qr-feT" secondAttribute="centerX" id="MF7-0T-d5S"/>
-                            <constraint firstItem="50L-JP-L1L" firstAttribute="centerX" secondItem="nzQ-md-c1p" secondAttribute="centerX" id="ZZY-Kl-VrB"/>
-                            <constraint firstItem="50L-JP-L1L" firstAttribute="top" secondItem="XNK-c3-5RC" secondAttribute="bottom" constant="36" id="ayu-h1-PMO"/>
-                            <constraint firstItem="nzQ-md-c1p" firstAttribute="top" secondItem="50L-JP-L1L" secondAttribute="bottom" constant="33" id="hky-J4-sQ1"/>
+                            <constraint firstItem="50L-JP-L1L" firstAttribute="centerX" secondItem="xG4-4X-gGm" secondAttribute="centerX" id="5K6-zX-vm5"/>
+                            <constraint firstItem="xG4-4X-gGm" firstAttribute="top" secondItem="XNK-c3-5RC" secondAttribute="bottom" constant="10" id="6NX-wt-w1k"/>
+                            <constraint firstItem="nzQ-md-c1p" firstAttribute="top" secondItem="50L-JP-L1L" secondAttribute="bottom" constant="21" id="CVm-Fc-INO"/>
+                            <constraint firstItem="50L-JP-L1L" firstAttribute="top" secondItem="xG4-4X-gGm" secondAttribute="bottom" constant="17" id="aF8-3j-8MO"/>
+                            <constraint firstItem="nzQ-md-c1p" firstAttribute="centerX" secondItem="zNX-Qr-feT" secondAttribute="centerX" id="mQE-ha-5Qr"/>
+                            <constraint firstItem="nzQ-md-c1p" firstAttribute="centerX" secondItem="50L-JP-L1L" secondAttribute="centerX" id="r78-HS-QOT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ночной квест" id="fAx-Qg-IAy">
@@ -64,16 +73,12 @@
         <scene sceneID="F5a-lM-lMF">
             <objects>
                 <tableViewController title="Квесты" id="A4H-7L-BKb" customClass="QuestsTableViewController" customModule="NightQuest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zHF-uK-1G1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zHF-uK-1G1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="OJ5-yS-g4f">
-                            <rect key="frame" x="0.0" y="66" width="320" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </activityIndicatorView>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Caption" id="rgg-Ny-VHB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="QCell" id="rgg-Ny-VHB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rgg-Ny-VHB" id="WlD-E2-gei">
@@ -88,7 +93,6 @@
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="Progress" destination="OJ5-yS-g4f" id="abK-9U-wZp"/>
                         <outlet property="QTable" destination="zHF-uK-1G1" id="v6d-zj-Tnb"/>
                         <segue destination="vsy-Kl-N4R" kind="show" identifier="QuestsToQuest" id="Kha-VN-7lr"/>
                         <segue destination="9ob-99-KXF" kind="show" identifier="QuestsToMain" id="cKh-jd-mPM"/>
@@ -118,13 +122,19 @@
                                         <rect key="frame" x="150" y="116" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="загрузка..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4MQ-JZ-UFN" userLabel="Длительность">
-                                        <rect key="frame" x="21" y="187" width="97" height="21"/>
+                                        <rect key="frame" x="21" y="167" width="97" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="загрузка..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4D-5b-08h" userLabel="Тип">
+                                        <rect key="frame" x="21" y="96" width="271" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpg-ie-nb2">
-                                        <rect key="frame" x="21" y="66" width="271" height="36"/>
+                                        <rect key="frame" x="21" y="46" width="271" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="bFB-M3-jCf"/>
                                         </constraints>
@@ -133,7 +143,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="загрузка..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozC-Q0-TPy" userLabel="Время начала">
-                                        <rect key="frame" x="21" y="163" width="271" height="21"/>
+                                        <rect key="frame" x="21" y="143" width="271" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="271" id="InW-dv-dK4"/>
                                         </constraints>
@@ -142,18 +152,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2e-dt-6en">
-                                        <rect key="frame" x="1" y="20" width="311" height="51"/>
+                                        <rect key="frame" x="1" y="0.0" width="311" height="51"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="51" id="XzA-x4-JJi"/>
                                             <constraint firstAttribute="width" constant="311" id="fal-F6-jnj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="загрузка..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4D-5b-08h" userLabel="Тип">
-                                        <rect key="frame" x="21" y="116" width="271" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -171,16 +175,14 @@
                                     <constraint firstItem="ozC-Q0-TPy" firstAttribute="top" secondItem="Q4D-5b-08h" secondAttribute="bottom" constant="26" id="cRu-c4-Vhp"/>
                                     <constraint firstItem="CUu-Zf-DBP" firstAttribute="top" secondItem="fCh-Hz-8oz" secondAttribute="top" constant="116" id="ffh-s7-rZu"/>
                                     <constraint firstAttribute="trailing" secondItem="bpg-ie-nb2" secondAttribute="trailing" constant="28" id="gjA-S6-gnx"/>
-                                    <constraint firstItem="v2e-dt-6en" firstAttribute="top" secondItem="fCh-Hz-8oz" secondAttribute="top" constant="20" id="iBQ-6s-xXZ"/>
                                     <constraint firstAttribute="bottom" secondItem="v2e-dt-6en" secondAttribute="bottom" constant="157" id="iHL-hd-VCE"/>
                                     <constraint firstItem="Q4D-5b-08h" firstAttribute="top" secondItem="bpg-ie-nb2" secondAttribute="bottom" constant="14" id="kbp-6k-dTJ"/>
                                     <constraint firstItem="Q4D-5b-08h" firstAttribute="leading" secondItem="4MQ-JZ-UFN" secondAttribute="leading" id="l6J-s8-Mgn"/>
                                     <constraint firstAttribute="trailing" secondItem="v2e-dt-6en" secondAttribute="trailing" constant="8" id="lwj-h2-zB9"/>
                                     <constraint firstItem="v2e-dt-6en" firstAttribute="leading" secondItem="fCh-Hz-8oz" secondAttribute="leading" constant="1" id="m18-sz-R9c"/>
-                                    <constraint firstItem="v2e-dt-6en" firstAttribute="top" secondItem="fCh-Hz-8oz" secondAttribute="top" constant="20" id="mtJ-CV-8Pd"/>
                                     <constraint firstItem="bpg-ie-nb2" firstAttribute="top" secondItem="v2e-dt-6en" secondAttribute="bottom" constant="-5" id="oGG-9k-8LJ"/>
                                     <constraint firstItem="ozC-Q0-TPy" firstAttribute="leading" secondItem="fCh-Hz-8oz" secondAttribute="leading" constant="21" id="qUq-go-nra"/>
-                                    <constraint firstItem="v2e-dt-6en" firstAttribute="top" secondItem="fCh-Hz-8oz" secondAttribute="top" constant="20" id="qnE-uh-5IC"/>
+                                    <constraint firstItem="v2e-dt-6en" firstAttribute="top" secondItem="fCh-Hz-8oz" secondAttribute="top" id="qnE-uh-5IC"/>
                                     <constraint firstItem="bpg-ie-nb2" firstAttribute="top" secondItem="v2e-dt-6en" secondAttribute="bottom" constant="-5" id="sEs-5Q-BUg"/>
                                     <constraint firstAttribute="centerX" secondItem="CUu-Zf-DBP" secondAttribute="centerX" id="xCT-2j-IaR"/>
                                     <constraint firstAttribute="trailing" secondItem="Q4D-5b-08h" secondAttribute="trailing" constant="28" id="yX0-Ue-l9Z"/>
@@ -453,7 +455,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="igx-eI-ke2">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="igx-eI-ke2">
                                 <rect key="frame" x="150" y="252" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLa-hT-64q">
@@ -517,9 +519,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Laz-dW-erc"/>
+        <segue reference="Oyq-D3-LWr"/>
         <segue reference="cHW-Zc-Zej"/>
         <segue reference="Yhj-xM-SwK"/>
-        <segue reference="Z2t-gu-hhX"/>
+        <segue reference="Me9-cR-Hea"/>
     </inferredMetricsTieBreakers>
 </document>
