@@ -127,6 +127,11 @@ class Server {
         let qlData="{\"action\":\"get\",\"what\":\"quests\",\"select\":\"\(select)\",\"columns\":\"name,time,id\"}";//,\"token\":\"\(self.token)\"}"
         tryAnyQuery(qlData, callback)
     }
+    func tryGetMyQuestsList(select:String, callback:(NSDictionary)->Void)
+    {
+        let qlData="{\"action\":\"get\",\"what\":\"myquests\",\"select\":\"\(select)\",\"token\":\"\(self.token)\"}"
+        tryAnyQuery(qlData, callback)
+    }
     func tryGetQuest(id: String,callback:(NSDictionary)->Void)
     {
         let qData="{\"action\":\"get\",\"what\":\"quest\",\"id\":\"\(id)\"}";//\"token\":\"\(self.token)\"}"
