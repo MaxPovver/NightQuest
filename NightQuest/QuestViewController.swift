@@ -39,7 +39,8 @@ class QuestViewController: UIViewController {
         Progress.stopAnimating()
         if json["code"] as String == "ok" {
             let quest = json["quest"]  as [String:String]
-            QName.text = quest["name"]
+            //QName.text = quest["name"]
+            self.navigationItem.title = quest["name"]
             QDescription.text = quest["description"]
             QTime.text = quest["time"]
             QLength.text = "(" + quest["length"]! + ")"

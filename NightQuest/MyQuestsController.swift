@@ -35,17 +35,19 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
        //а вдруг уже квест идет? тогда сразу кидаем на его страничку
-       // server.tryCheckLogin(loginChecked)
+    server.tryCheckLogin(loginChecked)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "MQToPlay") {
             let vc = segue.destinationViewController as Quest
             vc.myQuest = choosenQuest!
         }
+        
     }
-    func loginChecked(json:NSDictionary)
+    func loginChecked(ok:Bool)
     {
-        if json["code"] as String == "ok" {
+       // presentViewController
+        if ok {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             l1 = false
             l2 = false
@@ -183,7 +185,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
                 let source = questsNew
             }
                 choosenQuest = source![indexPath.row]
-                self.performSegueWithIdentifier("MyQuestsToMyQuest",sender: self)
+                self.performSegueWithIdentifier("MQToPlay",sender: self)
         
         case 3:
             if indexPath.row == 0 {
