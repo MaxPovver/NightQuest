@@ -51,9 +51,9 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     var r = false
     var re = false
-    func loginChecked(json:NSDictionary)
+    func loginChecked(ok:Bool)
     {
-        if json["code"] as String == "ok" {
+        if ok {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             server.tryGetRiddles(myQuest["id"]!,callback: OnRiddlesRecieved)
             server.tryGetExtraRiddles(myQuest["id"]!,callback: OnExtraRiddlesRecived)

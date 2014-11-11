@@ -13,11 +13,14 @@ let server:Server=Server()//создаем объект для работы с �
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    override init() {
+        super.init()
+        server.onLoad()
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        server.onLoad()
+       // server.onLoad()
         println("all ok")
         return true
     }

@@ -11,7 +11,7 @@
 		8443367D1A0F6E7600099A49 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443367C1A0F6E7600099A49 /* Quest.swift */; };
 		844336841A0FB02800099A49 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844336831A0FB02800099A49 /* PushKit.framework */; };
 		8458AF771A0FD1400097B299 /* RiddleOriginal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458AF761A0FD1400097B299 /* RiddleOriginal.swift */; };
-		8458AF791A0FD5E70097B299 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8458AF781A0FD5E70097B299 /* sky.jpg */; };
+		8458AFD91A0FF8EA0097B299 /* Riddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458AFD81A0FF8EA0097B299 /* Riddle.swift */; };
 		845F79381A06908B00DF2B8F /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F79371A06908B00DF2B8F /* PaymentViewController.swift */; };
 		84A1610D1A029C4B004E5A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610C1A029C4B004E5A78 /* AppDelegate.swift */; };
 		84A1610F1A029C4B004E5A78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A1610E1A029C4B004E5A78 /* LoginViewController.swift */; };
@@ -43,7 +43,7 @@
 		8443367E1A0FAD4E00099A49 /* NightQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NightQuest.entitlements; sourceTree = "<group>"; };
 		844336831A0FB02800099A49 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		8458AF761A0FD1400097B299 /* RiddleOriginal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiddleOriginal.swift; sourceTree = "<group>"; };
-		8458AF781A0FD5E70097B299 /* sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpg; sourceTree = "<group>"; };
+		8458AFD81A0FF8EA0097B299 /* Riddle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Riddle.swift; sourceTree = "<group>"; };
 		845F79371A06908B00DF2B8F /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		84A161071A029C4B004E5A78 /* NightQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NightQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A1610B1A029C4B004E5A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,8 +104,8 @@
 		84A161091A029C4B004E5A78 /* NightQuest */ = {
 			isa = PBXGroup;
 			children = (
+				84D044821A1247FE0013654F /* Backgrounds */,
 				8443367E1A0FAD4E00099A49 /* NightQuest.entitlements */,
-				8458AF781A0FD5E70097B299 /* sky.jpg */,
 				84DF55071A04CEC300D30171 /* MainViewController.swift */,
 				84C130621A0A953D0099E0D4 /* QuestViewController.swift */,
 				84C130601A0A8FB00099E0D4 /* QuestsTableViewController.swift */,
@@ -118,6 +118,7 @@
 				84A1610E1A029C4B004E5A78 /* LoginViewController.swift */,
 				845F79371A06908B00DF2B8F /* PaymentViewController.swift */,
 				84A1612C1A029C99004E5A78 /* ServerCooperation.swift */,
+				8458AFD81A0FF8EA0097B299 /* Riddle.swift */,
 				84A161101A029C4B004E5A78 /* Main.storyboard */,
 				84A161131A029C4B004E5A78 /* Images.xcassets */,
 				84A161151A029C4B004E5A78 /* LaunchScreen.xib */,
@@ -149,6 +150,13 @@
 				84A161211A029C4B004E5A78 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84D044821A1247FE0013654F /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Backgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A161121A029C4B004E5A78 /* Main.storyboard in Resources */,
-				8458AF791A0FD5E70097B299 /* sky.jpg in Resources */,
 				84A161171A029C4B004E5A78 /* LaunchScreen.xib in Resources */,
 				84A161141A029C4B004E5A78 /* Images.xcassets in Resources */,
 			);
@@ -278,6 +285,7 @@
 				84D4E3F31A0F30020003F515 /* MyQuestsController.swift in Sources */,
 				8443367B1A0F6D9900099A49 /* MyQuestViewController.swift in Sources */,
 				8443367D1A0F6E7600099A49 /* Quest.swift in Sources */,
+				8458AFD91A0FF8EA0097B299 /* Riddle.swift in Sources */,
 				84C130631A0A953D0099E0D4 /* QuestViewController.swift in Sources */,
 				84DF55041A04C7C500D30171 /* PersonalViewController.swift in Sources */,
 				84C130611A0A8FB00099E0D4 /* QuestsTableViewController.swift in Sources */,

@@ -22,14 +22,19 @@ class Server {
     {
         
     }
-    private let defaults:NSUserDefaults=NSUserDefaults.standardUserDefaults()
+   
     func onLoad()//если юзер был залогинен, пытается загрузить его из файла(чтоб автоматически войти)
     {
         var tmp=NSUserDefaults.standardUserDefaults().stringForKey("token")
         //println(tmp)
         if(tmp != nil && !tmp!.isEmpty)
         {
-            self.tryCheckLogin(tmp!,{(json:NSDictionary)->Void in var l=json["code"] as String=="ok"; if l {println("ok "+tmp!);self.setToken(tmp!)}else{self.unsetToken()}})
+            self.tryCheckLogin(tmp!,{
+                (json:NSDictionary)->Void in
+                var l=json["code"] as String=="ok";
+                if l {println("ok "+tmp!);self.setToken(tmp!)}
+                    else
+                {self.unsetToken()}})
         } else {
             self.tryRegister("admin",{(NSDictionary)->Void in return })//"грязный хак" для убирания проблемы с регистрацией, если юзер уже зашел, не делаем его
         }
@@ -69,10 +74,19 @@ class Server {
         let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(temp)\"}"
         tryAnyQuery(checkData, callback)
     }
-    func tryCheckLogin(callback:(NSDictionary)->Void)
+    func tryCheckLogin(callback:(Bool)->Void)
     {
-        let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(self.token)\"}"
-        tryAnyQuery(checkData, callback)
+        var tmp=NSUserDefaults.standardUserDefaults().stringForKey("token")
+        if(tmp != nil && !tmp!.isEmpty)
+        {
+        let checkData="{\"action\":\"checkmylogin\",\"token\":\"\(tmp!)\"}"
+        func callme(json:NSDictionary)->Void {
+            var l=false
+            l=json["code"] as String=="ok"
+            callback(l)
+        }
+        tryAnyQuery(checkData, callback: callme)
+        } else { callback(false) }
     }
     func tryRegister(phone: NSString,callback:(NSDictionary)->Void)
     {
@@ -163,6 +177,11 @@ class Server {
     }
     func tryCheckQuestNow(callback:(NSDictionary)->Void) {
         let qData="{\"action\":\"check\",\"what\":\"questnow\",\"token\":\"\(self.token)\"}";
+        tryAnyQuery(qData, callback)
+    }
+    func tryCheckRiddle(rid:String, code:String, callback:(NSDictionary)->Void) {
+    exit(EXIT_FAILURE) //! доделать сразу после загадок!!
+        let qData="{\"action\":\"check\",\"what\":\"code\",\"rid\":\"\(rid)\",\"value\":\"\(code)\",\"token\":\"\(self.token)\"}";
         tryAnyQuery(qData, callback)
     }
     func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможности расширить класс не меняя его кода

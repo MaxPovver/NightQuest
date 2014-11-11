@@ -29,6 +29,7 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
    /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
       //  Progress.startAnimating()
        // QTable.style = UITableViewStyle.
+        QTable.reloadData()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "QuestsToQuest") {
@@ -42,7 +43,7 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
         if json["code"] as String == "ok" {
             var err: NSError?
             quests = json["quests"] as [[String:String]]?
-            QTable.reloadData()
+            QTable?.reloadData()
         } else {
             println("error getting quests")
         }
