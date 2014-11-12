@@ -37,7 +37,7 @@ class PersonalViewController: UIViewController {
             println(json["message"]? as String)
         } else
         {
-            self.performSegueWithIdentifier("PersonalToLogin", sender: self)
+            self.performSegueWithIdentifier("SettingsToLogin", sender: self)
             println("Logout OK!")
         }
     }
@@ -53,7 +53,7 @@ class PersonalViewController: UIViewController {
             println(json["message"]? as String)
         } else
         {
-            self.performSegueWithIdentifier("PersonalToLogin", sender: self)
+            self.performSegueWithIdentifier("SettingsToLogin", sender: self)
             println("Reset OK!")
         }
     }
@@ -70,7 +70,7 @@ class PersonalViewController: UIViewController {
         {
             QuestsCounter.text = "Квестов оплачено: " + (json["message"] as String)
         } else {
-             self.performSegueWithIdentifier("PersonalToLogin", sender: self)
+             self.performSegueWithIdentifier("SettingsToLogin", sender: self)
             println("Impossible to get quests count, logging out...")
         }
     }

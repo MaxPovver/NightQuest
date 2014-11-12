@@ -73,9 +73,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.becomeFirstResponder()
         println("tapped")
     }*/
+    func isNum(s:String)->Bool {
+        var f = NSNumberFormatter()
+        var test = f.numberFromString(s)
+        return test != nil
+    }
+    func convertPhone(phone:String)->String {
+
+        if   !isNum(phone) {//если это не номер
+            return phone//просто вернем как есть
+        }
+        println(phone.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        switch ( phone.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) )
+        {
+            case 10://9150000000 - прибавим +7
+                    return  "+7\(phone)"
+            case 11:// 89150000000 или 79150000000
+                var newPh = phone.substringFromIndex(phone.startIndex.successor())//просто вырежем первую цифру и сведем к первому варианту
+                return "+7\(newPh)"
+            case 12://+79153832915
+                return phone//просто вернем
+        default://рандомный набор цифр
+            return phone//просто вернем
+        }
+    }
    @IBAction func login(sender :AnyObject)//это делается при нажатии кнопки входа.
     {
-        var phoneNumber = "+7" + self.Login.text //вытаскиваем сюда значение телефона, который чувак зарегать хочет
+        var phoneNumber = convertPhone(self.Login.text) //вытаскиваем сюда значение телефона, который чувак зарегать хочет
             println("logging in as  \(phoneNumber)")
         Progress.startAnimating()
             server.tryLogin(phoneNumber,pass: self.Password.text,processLoginResult)
@@ -98,7 +122,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func register(sender :AnyObject)//это делается при нажатии кнопки регистрацции.
     {
-        var phoneNumber = "+7" + self.Phone.text //вытаскиваем сюда значение телефона, который чувак зарегать хочет
+        var phoneNumber = convertPhone( self.Phone.text ) //вытаскиваем сюда значение телефона, который чувак зарегать хочет
         if phoneNumber.utf16Count == 12 {//если номер нормальной длины
             println("registering  \(phoneNumber)")
             Progress.startAnimating()
