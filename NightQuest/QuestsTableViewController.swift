@@ -29,6 +29,7 @@ class QuestsTableViewController :UITableViewController, UITableViewDelegate, UIT
    /* self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "QCell")*/
       //  Progress.startAnimating()
        // QTable.style = UITableViewStyle.
+        
         QTable.reloadData()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

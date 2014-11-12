@@ -84,10 +84,13 @@
         <scene sceneID="F5a-lM-lMF">
             <objects>
                 <tableViewController title="Квесты" id="A4H-7L-BKb" customClass="QuestsTableViewController" customModule="NightQuest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zHF-uK-1G1">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zHF-uK-1G1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="15" reuseIdentifier="QCell" textLabel="wZJ-hw-aWf" detailTextLabel="K4H-gq-ibd" style="IBUITableViewCellStyleSubtitle" id="rgg-Ny-VHB">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -109,6 +112,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -127,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gx-Me-Cfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="336"/>
+            <point key="canvasLocation" x="1935" y="1008"/>
         </scene>
         <!--Просмотр квеста-->
         <scene sceneID="cZL-s6-sq2">
@@ -671,12 +675,53 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="A4H-7L-BKb" kind="relationship" relationship="rootViewController" id="dFC-7q-Mjr"/>
+                        <segue destination="5lE-jd-5YZ" kind="relationship" relationship="rootViewController" id="nCr-op-fts"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgs-F4-FEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1271" y="336"/>
+        </scene>
+        <!--Все квесты-->
+        <scene sceneID="75B-iG-FxP">
+            <objects>
+                <viewController title="Все квесты" id="5lE-jd-5YZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hwe-nv-0lb"/>
+                        <viewControllerLayoutGuide type="bottom" id="aEQ-t3-ulh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Asq-vO-mwX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main@iPhone5" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-Fg-kg5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kG-ex-hHb">
+                                <rect key="frame" x="24" y="113" width="273" height="377"/>
+                                <connections>
+                                    <segue destination="A4H-7L-BKb" kind="embed" id="IQi-jj-1tZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aEQ-t3-ulh" firstAttribute="top" secondItem="2kG-ex-hHb" secondAttribute="bottom" constant="29" id="37Y-ma-q2B"/>
+                            <constraint firstItem="o3y-Fg-kg5" firstAttribute="top" secondItem="Asq-vO-mwX" secondAttribute="top" id="Leq-e0-DoZ"/>
+                            <constraint firstItem="2kG-ex-hHb" firstAttribute="leading" secondItem="Asq-vO-mwX" secondAttribute="leadingMargin" constant="8" id="Rkp-rf-8S2"/>
+                            <constraint firstItem="o3y-Fg-kg5" firstAttribute="centerX" secondItem="2kG-ex-hHb" secondAttribute="centerX" id="Wpp-Ry-HHp"/>
+                            <constraint firstItem="2kG-ex-hHb" firstAttribute="top" secondItem="hwe-nv-0lb" secondAttribute="bottom" constant="49" id="cmg-Zi-PYf"/>
+                            <constraint firstAttribute="bottom" secondItem="o3y-Fg-kg5" secondAttribute="bottom" id="o0H-Xi-WF2"/>
+                            <constraint firstAttribute="trailing" secondItem="o3y-Fg-kg5" secondAttribute="trailing" id="oJn-50-7tG"/>
+                            <constraint firstItem="o3y-Fg-kg5" firstAttribute="leading" secondItem="Asq-vO-mwX" secondAttribute="leading" id="tSW-Nu-Mdf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Все квесты" id="ZLD-zM-wea"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5J-ag-3gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="302"/>
         </scene>
     </scenes>
     <resources>
