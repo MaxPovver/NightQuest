@@ -118,7 +118,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func AccountOpen(loggedIn:Bool) {
         if loggedIn {
             self.performSegueWithIdentifier("LoginToMain",sender:self)
-        } else if !server.getPhone().isEmpty { Login.text = server.getPhone() }
+        } else if !server.getPhone().isEmpty { Login.text = server.getPhone(); Password.becomeFirstResponder()}
     }
     @IBAction func register(sender :AnyObject)//это делается при нажатии кнопки регистрацции.
     {
