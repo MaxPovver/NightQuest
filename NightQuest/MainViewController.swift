@@ -16,7 +16,7 @@ class MainViewController: UIViewController {//контроллер главно�
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        server.tryCheckLogin(AccountOpen)//еслине залогинены, кинет отюда на вход в прилагу
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,6 +49,11 @@ class MainViewController: UIViewController {//контроллер главно�
         if (segue.identifier == "MainToPlay") {
             let vc = segue.destinationViewController as Quest
             vc.myQuest = choosenQuest!
+        }
+    }
+    func AccountOpen(loggedIn:Bool) {
+        if !loggedIn {
+            self.performSegueWithIdentifier("MainToLogin",sender:self)
         }
     }
 }

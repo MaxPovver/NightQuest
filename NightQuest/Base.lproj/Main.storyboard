@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YgS-An-M2w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aWa-gJ-2X5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -29,6 +29,9 @@
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="1024" height="768"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="YgS-An-M2w" kind="showDetail" identifier="MainToLogin" id="7JV-6d-IHQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCx-zY-DBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +79,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="QTable" destination="0x8-yr-4Nd" id="YsU-Fi-Qex"/>
-                        <segue destination="EVq-bb-HJp" kind="show" identifier="MQToPlay" id="gIq-pb-dL6"/>
+                        <segue destination="EVq-bb-HJp" kind="showDetail" identifier="MQToPlay" id="gIq-pb-dL6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T7-oO-4JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -590,9 +593,6 @@
                             <constraint firstItem="58q-hw-5DP" firstAttribute="top" secondItem="YoK-Q5-HOF" secondAttribute="bottom" constant="287" id="nsI-Av-jWX"/>
                             <constraint firstItem="YoK-Q5-HOF" firstAttribute="top" secondItem="YSd-9d-bys" secondAttribute="bottom" constant="17" id="yua-21-LJ7"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="aam-5b-sxU" appends="YES" id="7yh-n5-tV0"/>
-                        </connections>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="320" height="260"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -601,9 +601,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3r-q2-nOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="aam-5b-sxU"/>
             </objects>
-            <point key="canvasLocation" x="3292" y="-464"/>
+            <point key="canvasLocation" x="3326" y="-594"/>
         </scene>
         <!--Оплата-->
         <scene sceneID="hbG-dS-7Bt">
@@ -659,10 +658,10 @@
             </objects>
             <point key="canvasLocation" x="3450" y="341"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Меню-->
         <scene sceneID="99N-aW-Qon">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aWa-gJ-2X5" sceneMemberID="viewController">
+                <tabBarController title="Меню" automaticallyAdjustsScrollViewInsets="NO" id="aWa-gJ-2X5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -785,6 +784,7 @@
         <image name="Main@iPhone5" width="1280" height="2272"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7JV-6d-IHQ"/>
         <segue reference="q9a-7y-tff"/>
     </inferredMetricsTieBreakers>
 </document>

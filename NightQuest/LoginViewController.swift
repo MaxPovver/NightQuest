@@ -36,7 +36,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        // server.tryCheckLogin(AccountOpen)
-        server.tryCheckLogin(AccountOpen)
         Login.delegate =  self 
         Password.delegate = self
         Phone.delegate = self
@@ -115,11 +114,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             println("Login OK!")
         }
     }
-    func AccountOpen(loggedIn:Bool) {
-        if loggedIn {
-            self.performSegueWithIdentifier("LoginToMain",sender:self)
-        } else if !server.getPhone().isEmpty { Login.text = server.getPhone(); Password.becomeFirstResponder()}
-    }
+
     @IBAction func register(sender :AnyObject)//это делается при нажатии кнопки регистрацции.
     {
         var phoneNumber = convertPhone( self.Phone.text ) //вытаскиваем сюда значение телефона, который чувак зарегать хочет
