@@ -101,7 +101,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 3//4
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,7 +112,11 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
                 return 0
             }
         } else if section == 1 {
-            if self.questsNow != nil {
+            if self.questsNow != nil {//при каждом обновлении данных
+                //если есть квесты, идущие сейчас
+                //оправим на вьюху выполнения квеста
+                choosenQuest = questsNow![0]
+                performSegueWithIdentifier("MQToPlay",sender: self)
                 return self.questsNow!.count
             } else {
                 return 0
@@ -123,10 +127,10 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
             } else {
                 return 0
             }
-        } else if section == 3
+        } /*else if section == 3
         {
             return 1
-        }
+        }*/
         return 0
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -148,14 +152,14 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
                 cell.textLabel.text = questsOld![indexPath.row]["name"]!
                 cell.detailTextLabel!.text =  questsOld![indexPath.row]["time"]!
             }
-        if questsNew != nil || questsNow != nil || questsOld != nil {
+       /* if questsNew != nil || questsNow != nil || questsOld != nil {
             if indexPath.section == 3 {
                 if indexPath.row == 0 {
                     cell.textLabel.text = "Купить квесты"
                     cell.detailTextLabel!.text = ""
                 }
             }
-        }
+        }*/
         return cell
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -165,37 +169,13 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
                 return "Идет сейчас"
             } else if section == 2 {
                     return "Уже прошли"
-                } else if section == 3 {
-            return "Действия"
+              /*  } else if section == 3 {
+            return "Действия"*/
         }
         return nil
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var source:[[String:String]]? = nil
-        switch (indexPath.section) {
-        case 0...2:
-            switch(indexPath.section) {
-            case 0: let source = questsNew
-                break
-                
-            case 1: let source = questsNow
-                break
-                
-            case 2: let source = questsOld
-                break
-            default:
-                let source = questsNew
-            }
-                choosenQuest = source?[indexPath.row]
-            if choosenQuest != nil  {
-                self.performSegueWithIdentifier("MQToPlay",sender: self) }
+          // все равно тут ничего не делается - наступление квеста авоматически проверяется
         
-        case 3:
-            if indexPath.row == 0 {
-                performSegueWithIdentifier("MyQuestsToPayment",sender: self)
-            }
-        default:
-            println("")
-        }
     }
 }
