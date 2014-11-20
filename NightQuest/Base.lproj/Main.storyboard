@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YgS-An-M2w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YgS-An-M2w">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,7 +23,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Главная" id="u1f-W8-x8Z"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="u1f-W8-x8Z"/>
                     <navigationItem key="navigationItem" title="Ночной квест" id="fAx-Qg-IAy">
                         <barButtonItem key="backBarButtonItem" title="Назад" id="vvN-Cc-oHp"/>
                     </navigationItem>
@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DCx-zY-DBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="-840"/>
+            <point key="canvasLocation" x="1271" y="-996"/>
         </scene>
         <!--Мои квесты-->
         <scene sceneID="gfO-Iu-Adq">
@@ -68,20 +68,20 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="hI5-LT-AAh" id="FXa-8U-1iJ"/>
-                            <outlet property="delegate" destination="hI5-LT-AAh" id="tbF-Ps-8k4"/>
+                            <outlet property="dataSource" destination="hI5-LT-AAh" id="Tnd-PF-FWg"/>
+                            <outlet property="delegate" destination="hI5-LT-AAh" id="Pl3-3z-6lv"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Мои квесты" id="Wvs-MS-9ff"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="QTable" destination="0x8-yr-4Nd" id="jtk-Ns-pOI"/>
+                        <outlet property="QTable" destination="0x8-yr-4Nd" id="YsU-Fi-Qex"/>
                         <segue destination="EVq-bb-HJp" kind="show" identifier="MQToPlay" id="gIq-pb-dL6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4T7-oO-4JJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="-1047"/>
+            <point key="canvasLocation" x="2284" y="-332"/>
         </scene>
         <!--Квесты-->
         <scene sceneID="F5a-lM-lMF">
@@ -134,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gx-Me-Cfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="1008"/>
+            <point key="canvasLocation" x="2284" y="341"/>
         </scene>
         <!--Просмотр квеста-->
         <scene sceneID="cZL-s6-sq2">
@@ -224,11 +224,12 @@
                         <outlet property="QLength" destination="4MQ-JZ-UFN" id="7jK-xY-sYR"/>
                         <outlet property="QTime" destination="ozC-Q0-TPy" id="Cra-1Y-geI"/>
                         <outlet property="QType" destination="Q4D-5b-08h" id="2XI-R7-FdC"/>
+                        <segue destination="5lE-jd-5YZ" kind="show" identifier="QuestToQuests" id="q9a-7y-tff"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tG4-xz-olu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="341"/>
+            <point key="canvasLocation" x="2719" y="341"/>
         </scene>
         <!--Войти-->
         <scene sceneID="mPH-zb-qDL">
@@ -385,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WN9-0N-awy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944" y="768"/>
+            <point key="canvasLocation" x="1824" y="1066"/>
         </scene>
         <!--Мои квесты-->
         <scene sceneID="Qon-Q5-EkO">
@@ -399,15 +400,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main@iPhone5" translatesAutoresizingMaskIntoConstraints="NO" id="SZR-M6-uW0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-w8-8DJ">
                                 <rect key="frame" x="24" y="112" width="273" height="380"/>
                                 <connections>
                                     <segue destination="hI5-LT-AAh" kind="embed" id="nRR-8z-ZqC"/>
                                 </connections>
                             </containerView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Main@iPhone5" translatesAutoresizingMaskIntoConstraints="NO" id="SZR-M6-uW0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -501,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brX-ig-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="-342"/>
+            <point key="canvasLocation" x="2738" y="-332"/>
         </scene>
         <!--Загадка, тип - оригинальный-->
         <scene sceneID="IET-Qo-z0q">
@@ -602,7 +603,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3r-q2-nOB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aam-5b-sxU"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="-412"/>
+            <point key="canvasLocation" x="3292" y="-464"/>
         </scene>
         <!--Оплата-->
         <scene sceneID="hbG-dS-7Bt">
@@ -697,7 +698,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgs-F4-FEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="336"/>
+            <point key="canvasLocation" x="1271" y="334"/>
         </scene>
         <!--Все квесты-->
         <scene sceneID="75B-iG-FxP">
@@ -714,7 +715,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Main@iPhone5" translatesAutoresizingMaskIntoConstraints="NO" id="o3y-Fg-kg5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kG-ex-hHb">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kG-ex-hHb">
                                 <rect key="frame" x="24" y="113" width="273" height="377"/>
                                 <connections>
                                     <segue destination="A4H-7L-BKb" kind="embed" id="IQi-jj-1tZ"/>
@@ -738,13 +739,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5J-ag-3gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="302"/>
+            <point key="canvasLocation" x="1824" y="341"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MfQ-dC-XYw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M6a-xM-WYI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" systemItem="favorites" id="VLe-h4-YgD"/>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="featured" id="VLe-h4-YgD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D5P-Th-37T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -776,11 +777,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crx-FI-x6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="768"/>
+            <point key="canvasLocation" x="1271" y="1052"/>
         </scene>
     </scenes>
     <resources>
         <image name="Login@iPhone5" width="1280" height="2272"/>
         <image name="Main@iPhone5" width="1280" height="2272"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q9a-7y-tff"/>
+    </inferredMetricsTieBreakers>
 </document>

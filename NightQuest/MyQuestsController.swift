@@ -63,8 +63,8 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         if json["code"] as String == "ok" {
             l1 = true
             questsNew = json["quests"] as [[String:String]]?
-            if l1&&l2&&l3
-                {QTable.reloadData()}
+            //if l1&&l2&&l3
+                QTable.reloadData()
         } else {
             println("error getting quests")
         }
@@ -75,7 +75,8 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         if json["code"] as String == "ok" {
             l2 = true
             questsNow = json["quests"] as [[String:String]]?
-            if l1&l2&l3 {QTable.reloadData()}
+           // if l1&l2&l3
+            QTable.reloadData()
         } else {
             println("error getting quests")
         }
@@ -86,7 +87,8 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
         if json["code"] as String == "ok" {
             l3 = true
             questsOld = json["quests"] as [[String:String]]?
-            if l1&l2&l3 {QTable.reloadData()}
+            //if l1&l2&l3
+            QTable.reloadData()
         } else {
             println("error getting quests")
         }
@@ -184,8 +186,9 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
             default:
                 let source = questsNew
             }
-                choosenQuest = source![indexPath.row]
-                self.performSegueWithIdentifier("MQToPlay",sender: self)
+                choosenQuest = source?[indexPath.row]
+            if choosenQuest != nil  {
+                self.performSegueWithIdentifier("MQToPlay",sender: self) }
         
         case 3:
             if indexPath.row == 0 {

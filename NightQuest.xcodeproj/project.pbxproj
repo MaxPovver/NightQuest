@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8443367B1A0F6D9900099A49 /* MyQuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443367A1A0F6D9900099A49 /* MyQuestViewController.swift */; };
 		8443367D1A0F6E7600099A49 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443367C1A0F6E7600099A49 /* Quest.swift */; };
 		844336841A0FB02800099A49 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844336831A0FB02800099A49 /* PushKit.framework */; };
 		8458AF771A0FD1400097B299 /* RiddleOriginal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458AF761A0FD1400097B299 /* RiddleOriginal.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8443367A1A0F6D9900099A49 /* MyQuestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestViewController.swift; sourceTree = "<group>"; };
 		8443367C1A0F6E7600099A49 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		8443367E1A0FAD4E00099A49 /* NightQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NightQuest.entitlements; sourceTree = "<group>"; };
 		844336831A0FB02800099A49 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
@@ -112,7 +110,6 @@
 				84D4E3F21A0F30020003F515 /* MyQuestsController.swift */,
 				8458AF761A0FD1400097B299 /* RiddleOriginal.swift */,
 				8443367C1A0F6E7600099A49 /* Quest.swift */,
-				8443367A1A0F6D9900099A49 /* MyQuestViewController.swift */,
 				84A1610C1A029C4B004E5A78 /* AppDelegate.swift */,
 				84DF55031A04C7C500D30171 /* PersonalViewController.swift */,
 				84A1610E1A029C4B004E5A78 /* LoginViewController.swift */,
@@ -283,7 +280,6 @@
 				84DF55081A04CEC300D30171 /* MainViewController.swift in Sources */,
 				8458AF771A0FD1400097B299 /* RiddleOriginal.swift in Sources */,
 				84D4E3F31A0F30020003F515 /* MyQuestsController.swift in Sources */,
-				8443367B1A0F6D9900099A49 /* MyQuestViewController.swift in Sources */,
 				8443367D1A0F6E7600099A49 /* Quest.swift in Sources */,
 				8458AFD91A0FF8EA0097B299 /* Riddle.swift in Sources */,
 				84C130631A0A953D0099E0D4 /* QuestViewController.swift in Sources */,

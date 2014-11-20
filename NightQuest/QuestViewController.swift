@@ -23,8 +23,8 @@ class QuestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       /* var rightButton = UIBarButtonItem(title: "Купить", style: .Done, target: self, action: "BuyBtnPressed")
-        self.navigationItem.rightBarButtonItem = rightButton*/
+        var rightButton = UIBarButtonItem(title: "Купить", style: .Done, target: self, action: "BuyBtnPressed")
+        self.navigationItem.rightBarButtonItem = rightButton
         Progress.startAnimating()
         server.tryGetQuest(myID,OnQuestRecived)
     }
@@ -56,7 +56,7 @@ class QuestViewController: UIViewController {
     }
     func OnLoginChecked(loggedIn:Bool)
     {
-        if loggedIn {//если не залогинен, сообщим об этом
+        if !loggedIn {//если не залогинен, сообщим об этом
             Progress.stopAnimating()//и покажем, что операций больше не выполняется
             notifyError( "Войдите, чтобы делать покупки" )
         } else {//иначе попытаемся купить
