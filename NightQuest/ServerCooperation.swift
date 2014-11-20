@@ -12,7 +12,7 @@ import UIKit
 // класс для всего общения с сервером и кеширования
 //работает как источник данных приложения
 class Server {
-    let apiURL="http://midnightquest.ru/mobile/api.php?q=" //адрес для запросов к "апи", к нему надо просто прибавить JSON в виде строки
+    let apiURL="https://midnightquest.ru/mobile/api.php?q=" //адрес для запросов к "апи", к нему надо просто прибавить JSON в виде строки
    // let savefile="settings-private.dat"
     
     private var token:String=""
