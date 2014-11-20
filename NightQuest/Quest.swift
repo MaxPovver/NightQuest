@@ -31,7 +31,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
     var myQuest:[String:String]
     @IBOutlet weak var QTable: UITableView!
     
-    @IBOutlet weak var Description: UILabel!
+   // @IBOutlet weak var Description: UILabel!
     
     @IBOutlet weak var Name: UILabel!
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
         Name.text = myQuest["name"]
-        Description.text = myQuest["description"]
+        //Description.text = myQuest["description"]
         server.tryCheckLogin(loginChecked)
     }
     override func didReceiveMemoryWarning() {

@@ -20,6 +20,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
     var l1 = false
     var l2 = false
     var l3 = false
+    var left = false
     /*required init(style:)
     {*/
     //var quets = ["We", "Heart", "Swift"]
@@ -38,8 +39,9 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
     server.tryCheckLogin(loginChecked)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "MQToPlay") {
-            let vc = segue.destinationViewController as Quest
+        if (segue.identifier == "MQToPlay" ) {
+            left = true
+            let vc = ((segue.destinationViewController as UITabBarController).viewControllers![0] as Quest)
             vc.myQuest = choosenQuest!
         }
         
@@ -116,7 +118,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
                 //если есть квесты, идущие сейчас
                 //оправим на вьюху выполнения квеста
                 choosenQuest = questsNow![0]
-                performSegueWithIdentifier("MQToPlay",sender: self)
+                if !left {performSegueWithIdentifier("MQToPlay",sender: self)}
                 return self.questsNow!.count
             } else {
                 return 0
