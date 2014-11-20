@@ -135,24 +135,35 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         var source:[[String:String]]? = nil
         switch (indexPath.section) {
         case 0...1:
-           /* switch(indexPath.section) {
-            case 0: let source = questsNew
-                break
-                
-            case 1: let source = questsNow
-                break
-                
-            case 2: let source = questsOld
-                break
-            default:
-                let source = questsNew
+            let src = (indexPath.section == 0) ? riddlesMain : riddlesExtra
+            let riddle = src![indexPath.row]
+            switch(riddle["type"]! as String) {
+                case "1"://original
+                    performSegueWithIdentifier("OriginalR",sender: self)
+                    break;
+                case "2"://photohunt
+                    performSegueWithIdentifier("PhotohuntR",sender: self)
+                    break
+                case "3"://comefirst
+                    performSegueWithIdentifier("ComefirstR",sender: self)
+                    break;
+                default:
+                    notify("Неизвестный тип загадки -- обновите приложение.")
             }
-            choosenID = source![indexPath.row]["id"]!
-            self.performSegueWithIdentifier("MyQuestsToMyQuest",sender: self)*/
-            performSegueWithIdentifier("RiddlesToRiddle",sender: self)
             break
         default:
             println("unknown tap")
         }
+    }
+    func notify(errorMsg:String,title:String = "Ошибка")
+    {
+        let alert = UIAlertController(title: title, message: errorMsg, preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "OK",
+            style: .Default,
+            handler: {
+                (alert: UIAlertAction!) in return
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
