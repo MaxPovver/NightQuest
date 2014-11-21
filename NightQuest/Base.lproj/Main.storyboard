@@ -570,7 +570,6 @@
                                 </state>
                                 <connections>
                                     <action selector="Ready:" destination="M0d-eJ-n7e" eventType="touchUpInside" id="sGI-oF-HNn"/>
-                                    <segue destination="47D-0Y-OBu" kind="show" id="QhX-h8-KTF"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
@@ -896,7 +895,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7JV-6d-IHQ"/>
-        <segue reference="QhX-h8-KTF"/>
         <segue reference="q9a-7y-tff"/>
     </inferredMetricsTieBreakers>
 </document>

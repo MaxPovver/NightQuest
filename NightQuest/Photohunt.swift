@@ -45,7 +45,9 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     @IBAction func Ready(sender: AnyObject) {
         //presentViewController( viewControllerToPresent:  popoverPresentationController,animated: false, completion: nil)
       //  navigationController?.navigationBar.p
+        tabBarController?.tabBar.hidden = false
         navigationController?.popViewControllerAnimated(true)
+        //navigationController?.
     }
     
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {

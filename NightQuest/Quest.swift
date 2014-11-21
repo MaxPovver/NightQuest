@@ -22,12 +22,13 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     required init(coder aDecoder: NSCoder) {
         // fatalError("init(coder:) has not been implemented")
+        myQuest = ["":""]
         super.init(coder:aDecoder)
-        
+        server.tryCheckLogin(loginChecked)
         //self.tableView = QTable
     }
     var riddlesMain,riddlesExtra:[[String:String]]?
-    class var myQuest:[String:String]
+    var myQuest:[String:String]
     var current:[String:String]?
     @IBOutlet weak var QTable: UITableView!
     
@@ -41,8 +42,9 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
         Name.text = myQuest["name"]
+        tabBarController?.tabBar.hidden = false
         //Description.text = myQuest["description"]
-        server.tryCheckLogin(loginChecked)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,8 +86,6 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         UIApplication.sharedApplication().networkActivityIndicatorVisible = !(re&r)
     }
-    
-
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
