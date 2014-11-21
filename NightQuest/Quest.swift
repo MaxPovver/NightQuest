@@ -22,13 +22,12 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     required init(coder aDecoder: NSCoder) {
         // fatalError("init(coder:) has not been implemented")
-        myQuest = ["":""]
         super.init(coder:aDecoder)
         
         //self.tableView = QTable
     }
     var riddlesMain,riddlesExtra:[[String:String]]?
-    var myQuest:[String:String]
+    class var myQuest:[String:String]
     var current:[String:String]?
     @IBOutlet weak var QTable: UITableView!
     

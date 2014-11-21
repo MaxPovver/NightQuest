@@ -41,7 +41,7 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "MQToPlay" ) {
             left = true
-            let vc = ((segue.destinationViewController as UITabBarController).viewControllers![0] as Quest)
+            let vc = (((segue.destinationViewController as UITabBarController).viewControllers![0] as UINavigationController).viewControllers![0] as Quest)
             vc.myQuest = choosenQuest!
         }
         

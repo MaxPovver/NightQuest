@@ -486,7 +486,9 @@
                             <constraint firstAttribute="trailing" secondItem="0sO-gv-83A" secondAttribute="trailing" constant="23" id="yOY-jO-vnh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="wLw-g9-4TW"/>
+                    <navigationItem key="navigationItem" title=" Загадки" id="HnV-f5-TvB">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Jet-tZ-xp0"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="Name" destination="bHM-Fx-ch6" id="Lf5-s0-2ye"/>
@@ -498,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brX-ig-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3406" y="-744"/>
+            <point key="canvasLocation" x="3938" y="-744"/>
         </scene>
         <!--Оригинальная-->
         <scene sceneID="awZ-y2-fFY">
@@ -546,17 +548,21 @@
                         <viewControllerLayoutGuide type="top" id="WCw-FN-fIL"/>
                         <viewControllerLayoutGuide type="bottom" id="3ud-cQ-uyq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="egJ-lq-8wd">
+                    <view key="view" contentMode="scaleToFill" id="egJ-lq-8wd" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Ph-ULz">
+                                <rect key="frame" x="0.0" y="358" width="320" height="155"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="287" id="dNA-Kc-ypF"/>
+                                    <constraint firstAttribute="height" constant="155" id="K2d-69-Ln2"/>
                                 </constraints>
-                            </webView>
+                                <connections>
+                                    <outlet property="dataSource" destination="M0d-eJ-n7e" id="6Mr-cs-fi6"/>
+                                    <outlet property="delegate" destination="M0d-eJ-n7e" id="lQm-Ar-OOZ"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-7h-clR">
                                 <rect key="frame" x="135" y="530" width="51" height="30"/>
                                 <state key="normal" title="Готово">
@@ -564,40 +570,29 @@
                                 </state>
                                 <connections>
                                     <action selector="Ready:" destination="M0d-eJ-n7e" eventType="touchUpInside" id="sGI-oF-HNn"/>
+                                    <segue destination="47D-0Y-OBu" kind="show" id="QhX-h8-KTF"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Ph-ULz">
-                                <rect key="frame" x="0.0" y="300" width="320" height="213"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="213" id="84S-W6-0k8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="268" id="d6M-8a-ODP"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="yO9-hc-imL">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yO9-hc-imL" id="jUm-tF-haI">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="M0d-eJ-n7e" id="6Mr-cs-fi6"/>
-                                    <outlet property="delegate" destination="M0d-eJ-n7e" id="lQm-Ar-OOZ"/>
-                                </connections>
-                            </tableView>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="13" id="2c7-tE-WuQ"/>
                             <constraint firstItem="WsC-7h-clR" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" constant="135" id="4rY-YU-QnG"/>
                             <constraint firstAttribute="trailing" secondItem="kJ1-6z-nWL" secondAttribute="trailing" id="8UQ-xn-REH"/>
                             <constraint firstItem="kJ1-6z-nWL" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="LpF-Iw-VjC"/>
-                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="top" secondItem="egJ-lq-8wd" secondAttribute="top" id="OV4-oi-1zv"/>
+                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="top" secondItem="egJ-lq-8wd" secondAttribute="top" constant="64" id="OV4-oi-1zv"/>
                             <constraint firstItem="WsC-7h-clR" firstAttribute="top" secondItem="24X-Ph-ULz" secondAttribute="bottom" constant="17" id="dkQ-fI-ett"/>
                             <constraint firstAttribute="trailing" secondItem="24X-Ph-ULz" secondAttribute="trailing" id="lgZ-Br-RaF"/>
                             <constraint firstItem="24X-Ph-ULz" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="veC-dT-0Jx"/>
                             <constraint firstAttribute="trailing" secondItem="WsC-7h-clR" secondAttribute="trailing" constant="134" id="wYH-cA-asC"/>
                             <constraint firstAttribute="bottom" secondItem="WsC-7h-clR" secondAttribute="bottom" constant="8" id="x9A-Od-sAn"/>
+                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="26" id="xdd-j8-USm"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -608,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUF-Wl-YHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4047" y="-843"/>
+            <point key="canvasLocation" x="4579" y="-829"/>
         </scene>
         <!--Приехать первым-->
         <scene sceneID="1wU-dD-9qy">
@@ -627,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYp-lh-B8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4694" y="-262"/>
+            <point key="canvasLocation" x="5226" y="-262"/>
         </scene>
         <!--Инфа-->
         <scene sceneID="1iH-6s-j91">
@@ -867,13 +862,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EVq-bb-HJp" kind="relationship" relationship="viewControllers" id="97a-tk-a25"/>
+                        <segue destination="47D-0Y-OBu" kind="relationship" relationship="viewControllers" id="97a-tk-a25"/>
                         <segue destination="PxL-CH-oez" kind="relationship" relationship="viewControllers" id="p8h-uf-OCQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0NK-KY-mNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2878" y="-332"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="26c-Y4-YSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="47D-0Y-OBu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="wLw-g9-4TW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eBH-OT-mNx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EVq-bb-HJp" kind="relationship" relationship="rootViewController" id="G1F-Sh-moc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCT-KT-arF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3406" y="-744"/>
         </scene>
     </scenes>
     <resources>
@@ -882,6 +896,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7JV-6d-IHQ"/>
+        <segue reference="QhX-h8-KTF"/>
         <segue reference="q9a-7y-tff"/>
     </inferredMetricsTieBreakers>
 </document>
