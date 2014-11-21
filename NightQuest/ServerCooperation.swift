@@ -179,6 +179,10 @@ class Server {
         let qData="{\"action\":\"check\",\"what\":\"questnow\",\"token\":\"\(self.token)\"}";
         tryAnyQuery(qData, callback)
     }
+    func riddlePicHtml(id: String)->String {
+        return "<img src='\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}'>";
+        //return "\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}"
+        }
     func tryCheckRiddle(rid:String, code:String, callback:(NSDictionary)->Void) {
     exit(EXIT_FAILURE) //! доделать сразу после загадок!!
         let qData="{\"action\":\"check\",\"what\":\"code\",\"rid\":\"\(rid)\",\"value\":\"\(code)\",\"token\":\"\(self.token)\"}";
@@ -186,10 +190,10 @@ class Server {
     }
     func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможности расширить класс не меняя его кода
     {
-        let registerURL=(self.apiURL + data)
-        let tmp = registerURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        let queryURL=(apiURL + data)
+        let tmp = queryURL.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let encoded = tmp?.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        println(registerURL/*+"="+encoded!*/)
+        println(queryURL/*+"="+encoded!*/)
         var url: NSURL = NSURL(string: encoded!)!
         var session = NSURLSession.sharedSession()
         var task = session.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in

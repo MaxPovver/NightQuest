@@ -29,6 +29,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     var riddlesMain,riddlesExtra:[[String:String]]?
     var myQuest:[String:String]
+    var current:[String:String]?
     @IBOutlet weak var QTable: UITableView!
     
    // @IBOutlet weak var Description: UILabel!
@@ -131,13 +132,25 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         return nil
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "OriginalR" {
+            (segue.destinationViewController as Original).riddle = current!
+        }else
+        if segue.identifier == "PhotohuntR" {
+            (segue.destinationViewController as Photohunt).riddle = current!
+            println("test")
+        }else
+        if segue.identifier == "ComefirstR" {
+            (segue.destinationViewController as Comefirst).riddle = current!
+        }
+    }
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         var source:[[String:String]]? = nil
         switch (indexPath.section) {
         case 0...1:
             let src = (indexPath.section == 0) ? riddlesMain : riddlesExtra
-            let riddle = src![indexPath.row]
-            switch(riddle["type"]! as String) {
+             current = src![indexPath.row]
+            switch(current!["type"]! as String) {
                 case "1"://original
                     performSegueWithIdentifier("OriginalR",sender: self)
                     break;

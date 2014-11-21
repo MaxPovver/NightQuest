@@ -11,14 +11,30 @@ import Foundation
 import UIKit
 
 
-class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource  {//
+class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, iRiddle  {//
+
+    required init(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        _riddle = ["":""]
+        super.init(coder: aDecoder)
+    }
     
     @IBOutlet weak var Picture: UIWebView!
     @IBOutlet weak var Codes: UITableView!
+    private var _riddle: [String:String]
+    var riddle: [String:String] { get {return _riddle} set(newval){_riddle = newval} }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        if !riddle.isEmpty {
+            //println()
+            /*let src = server.riddlePicHtml(riddle["id"]!)
+            print(src)*/
+           // Picture.loadRequest(NSURLRequest( URL:NSURL(string:src)! ) )
+            Picture.loadHTMLString(server.riddlePicHtml(riddle["id"]!), baseURL: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,6 +46,13 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 0//4
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "OriginalR" || segue.identifier == "PhotohuntR" || segue.identifier == "ComefirstR" {
+            
+            //segue.destinationViewController.parentViewController  = self
+        }
+        println("wtf")
     }
     
      func tableView(tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {

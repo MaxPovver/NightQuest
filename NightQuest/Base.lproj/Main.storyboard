@@ -491,9 +491,9 @@
                     <connections>
                         <outlet property="Name" destination="bHM-Fx-ch6" id="Lf5-s0-2ye"/>
                         <outlet property="QTable" destination="0sO-gv-83A" id="fzp-m0-MgW"/>
-                        <segue destination="Kmb-rG-hRt" kind="presentation" identifier="OrignalR" id="CmU-bL-9Ij"/>
-                        <segue destination="M0d-eJ-n7e" kind="presentation" identifier="PhotohuntR" id="DrZ-WR-wvo"/>
-                        <segue destination="Doi-lO-cyl" kind="presentation" identifier="ComefirstR" id="1Ip-V4-1Mo"/>
+                        <segue destination="Kmb-rG-hRt" kind="show" identifier="OrignalR" id="CmU-bL-9Ij"/>
+                        <segue destination="M0d-eJ-n7e" kind="show" identifier="PhotohuntR" id="DrZ-WR-wvo"/>
+                        <segue destination="Doi-lO-cyl" kind="show" identifier="ComefirstR" id="1Ip-V4-1Mo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="brX-ig-R2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUF-Wl-YHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4310" y="-848"/>
+            <point key="canvasLocation" x="4047" y="-843"/>
         </scene>
         <!--Приехать первым-->
         <scene sceneID="1wU-dD-9qy">
