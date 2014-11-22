@@ -180,7 +180,7 @@ class Server {
         tryAnyQuery(qData, callback)
     }
     func riddlePicHtml(id: String)->String {
-        return "<img src='\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}'>";
+        return "<img src='\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}' style='width:100%; height:100%;'>";
         //return "\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}"
         }
     func tryCheckRiddle(rid:String, code:String, callback:(NSDictionary)->Void) {

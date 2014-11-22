@@ -70,4 +70,7 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
      func didSelectRowAtIndexPath(tableView: UITableView,  indexPath: NSIndexPath) {
         // все равно тут ничего не делается - наступление квеста авоматически проверяется
     }
+    override func supportedInterfaceOrientations() -> Int {// чтоб не поворачивли на бок
+        return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+    }
 }

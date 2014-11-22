@@ -42,7 +42,7 @@ class MainViewController: UIViewController {//контроллер главно�
             if json["message"] as String == "yes" //только если юзер уже имеет реальный квест
             {
                 choosenQuest = json["current"] as [String:String]
-                performSegueWithIdentifier("MainToMQ", sender: self)
+                dispatch_async(dispatch_get_main_queue()) { self.performSegueWithIdentifier("MainToMQ", sender: self) }
             }
         }
         

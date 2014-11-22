@@ -50,6 +50,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // Dispose of any resources that can be recreated.
     }
+
     var r = false
     var re = false
     func loginChecked(ok:Bool)
@@ -67,7 +68,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             riddlesMain = json["riddles"] as [[String:String]]?
         
-            QTable.reloadData()
+            QTable?.reloadData()
         } else {
             println("error getting main riddles")
         }
@@ -79,7 +80,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         if json["code"] as String == "ok" {
             
             riddlesExtra = json["riddles"] as [[String:String]]?
-             QTable.reloadData()
+             QTable?.reloadData()
         } else {
             println("error getting quests")
         }
@@ -167,6 +168,9 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
             println("unknown tap")
         }
     }
+    func sendCodes(riddleID:String,codes:[String:String]) {//отправить коды на проверку
+        
+    }
     func notify(errorMsg:String,title:String = "Ошибка")
     {
         let alert = UIAlertController(title: title, message: errorMsg, preferredStyle: .Alert)
@@ -179,3 +183,10 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.presentViewController(alert, animated: true, completion: nil)
     }
 }
+
+class QuestTab :UITabBarController{
+override func supportedInterfaceOrientations() -> Int {// чтоб не поворачивли на бок
+    return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+}
+}
+

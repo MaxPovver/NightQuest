@@ -573,12 +573,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="0sO-gv-83A" secondAttribute="bottom" constant="105" id="5un-Wi-825"/>
+                            <constraint firstAttribute="trailing" secondItem="OWv-fE-xne" secondAttribute="trailing" id="6Ff-OZ-sY0"/>
                             <constraint firstItem="bHM-Fx-ch6" firstAttribute="leading" secondItem="Hik-jj-1Sk" secondAttribute="leading" constant="29" id="80k-UB-ua6"/>
+                            <constraint firstItem="OWv-fE-xne" firstAttribute="top" secondItem="Hik-jj-1Sk" secondAttribute="top" id="Gex-Wy-0zL"/>
                             <constraint firstItem="bHM-Fx-ch6" firstAttribute="top" secondItem="Hik-jj-1Sk" secondAttribute="top" constant="113" id="Wv6-p9-SCZ"/>
                             <constraint firstAttribute="trailing" secondItem="bHM-Fx-ch6" secondAttribute="trailing" constant="28" id="aqO-H8-bEQ"/>
                             <constraint firstItem="0sO-gv-83A" firstAttribute="leading" secondItem="Hik-jj-1Sk" secondAttribute="leading" constant="24" id="qR2-QG-qs7"/>
+                            <constraint firstItem="OWv-fE-xne" firstAttribute="leading" secondItem="Hik-jj-1Sk" secondAttribute="leading" id="sCT-gH-q4B"/>
                             <constraint firstItem="0sO-gv-83A" firstAttribute="top" secondItem="bHM-Fx-ch6" secondAttribute="bottom" constant="8" id="xH3-GT-z9j"/>
                             <constraint firstAttribute="trailing" secondItem="0sO-gv-83A" secondAttribute="trailing" constant="23" id="yOY-jO-vnh"/>
+                            <constraint firstAttribute="bottom" secondItem="OWv-fE-xne" secondAttribute="bottom" constant="26" id="z2I-hN-pxo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" Загадки" id="HnV-f5-TvB">
@@ -644,26 +648,12 @@
                         <viewControllerLayoutGuide type="top" id="WCw-FN-fIL"/>
                         <viewControllerLayoutGuide type="bottom" id="3ud-cQ-uyq"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="egJ-lq-8wd" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="egJ-lq-8wd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Ph-ULz">
-                                <rect key="frame" x="0.0" y="358" width="320" height="155"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="155" id="K2d-69-Ln2"/>
-                                </constraints>
-                                <variation key="widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="358" width="568" height="155"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="M0d-eJ-n7e" id="6Mr-cs-fi6"/>
-                                    <outlet property="delegate" destination="M0d-eJ-n7e" id="lQm-Ar-OOZ"/>
-                                </connections>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-7h-clR">
-                                <rect key="frame" x="135" y="530" width="51" height="30"/>
+                                <rect key="frame" x="135" y="397" width="51" height="30"/>
                                 <state key="normal" title="Готово">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -674,11 +664,27 @@
                                     <action selector="Ready:" destination="M0d-eJ-n7e" eventType="touchUpInside" id="sGI-oF-HNn"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="268"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Ph-ULz">
+                                <rect key="frame" x="0.0" y="272" width="321" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="268" id="d6M-8a-ODP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="321" id="1Pa-SG-XBA"/>
+                                    <constraint firstAttribute="height" constant="120" id="IRR-Ec-0lh"/>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="358" width="568" height="155"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="M0d-eJ-n7e" id="6Mr-cs-fi6"/>
+                                    <outlet property="delegate" destination="M0d-eJ-n7e" id="lQm-Ar-OOZ"/>
+                                </connections>
+                            </tableView>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="ew9-wh-182"/>
+                                    <constraint firstAttribute="height" constant="200" id="gt6-sG-1pR"/>
                                 </constraints>
                                 <variation key="widthClass=regular" ambiguous="YES">
                                     <rect key="frame" x="0.0" y="64" width="568" height="268"/>
@@ -687,16 +693,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WsC-7h-clR" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" constant="135" id="4rY-YU-QnG"/>
-                            <constraint firstAttribute="trailing" secondItem="kJ1-6z-nWL" secondAttribute="trailing" id="8UQ-xn-REH"/>
-                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="LpF-Iw-VjC"/>
-                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="top" secondItem="egJ-lq-8wd" secondAttribute="top" constant="64" id="OV4-oi-1zv"/>
-                            <constraint firstItem="WsC-7h-clR" firstAttribute="top" secondItem="24X-Ph-ULz" secondAttribute="bottom" constant="17" id="dkQ-fI-ett"/>
-                            <constraint firstAttribute="trailing" secondItem="24X-Ph-ULz" secondAttribute="trailing" id="lgZ-Br-RaF"/>
-                            <constraint firstItem="24X-Ph-ULz" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="veC-dT-0Jx"/>
-                            <constraint firstAttribute="trailing" secondItem="WsC-7h-clR" secondAttribute="trailing" constant="134" id="wYH-cA-asC"/>
-                            <constraint firstAttribute="bottom" secondItem="WsC-7h-clR" secondAttribute="bottom" constant="8" id="x9A-Od-sAn"/>
-                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="26" id="xdd-j8-USm"/>
+                            <constraint firstAttribute="trailing" secondItem="WsC-7h-clR" secondAttribute="trailing" constant="134" id="01n-fE-mpB"/>
+                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="8" id="89B-0g-gka"/>
+                            <constraint firstAttribute="trailing" secondItem="kJ1-6z-nWL" secondAttribute="trailing" id="L5b-AP-sZ4"/>
+                            <constraint firstAttribute="trailing" secondItem="24X-Ph-ULz" secondAttribute="trailing" constant="-1" id="fKQ-z0-MhJ"/>
+                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="g0w-MM-fMb"/>
+                            <constraint firstItem="kJ1-6z-nWL" firstAttribute="top" secondItem="egJ-lq-8wd" secondAttribute="top" constant="64" id="poc-V3-dQJ"/>
+                            <constraint firstItem="WsC-7h-clR" firstAttribute="top" secondItem="24X-Ph-ULz" secondAttribute="bottom" constant="5" id="rbj-y4-CRa"/>
+                            <constraint firstItem="WsC-7h-clR" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" constant="135" id="ueR-Rd-Dn6"/>
+                            <constraint firstItem="24X-Ph-ULz" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="xS3-Hj-xpl"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -957,10 +962,10 @@
             </objects>
             <point key="canvasLocation" x="1271" y="1052"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Quest Tab-->
         <scene sceneID="Kio-5c-RO2">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BEr-Z8-B0k" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BEr-Z8-B0k" customClass="QuestTab" customModule="NightQuest" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Vmg-A1-gVs">
