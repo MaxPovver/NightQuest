@@ -8,6 +8,7 @@
 
 import UIKit
 
+var login:LoginViewController?
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
@@ -16,6 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
      //   server.onLoad()
         super.init(coder:aDecoder)
         ChooseBackgrounds()
+        
+        let login = self
     }
     
     
@@ -40,11 +43,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Password.delegate = self
         Phone.delegate = self
         ToLogin(self)
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override func supportedInterfaceOrientations() -> Int {// чтоб не поворачивли на бок ))
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
     func ChooseBackgrounds() {
         var reg_pic_name = "Reg@iPhone5"
@@ -64,14 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Login.hidden = false
         Password.hidden = false
     }
-    
-  /*  @IBAction func test(sender: AnyObject) {
-        println("123")
-    }
-    @IBAction func Tapped(sender: AnyObject) {
-        self.becomeFirstResponder()
-        println("tapped")
-    }*/
+
     func isNum(s:String)->Bool {
         var f = NSNumberFormatter()
         var test = f.numberFromString(s)

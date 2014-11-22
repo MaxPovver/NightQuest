@@ -27,7 +27,6 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        tabBarController?.tabBar.hidden = true
         // Do any additional setup after loading the view, typically from a nib
         if !riddle.isEmpty {
             //println()
@@ -43,11 +42,7 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
         // Dispose of any resources that can be recreated.
     }
     @IBAction func Ready(sender: AnyObject) {
-        //presentViewController( viewControllerToPresent:  popoverPresentationController,animated: false, completion: nil)
-      //  navigationController?.navigationBar.p
-        tabBarController?.tabBar.hidden = false
         navigationController?.popViewControllerAnimated(true)
-        //navigationController?.
     }
     
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {

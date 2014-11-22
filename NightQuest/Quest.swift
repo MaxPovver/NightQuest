@@ -42,7 +42,6 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         //  Progress.startAnimating()
         // QTable.style = UITableViewStyle.
         Name.text = myQuest["name"]
-        tabBarController?.tabBar.hidden = false
         //Description.text = myQuest["description"]
         
     }
@@ -59,7 +58,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             server.tryGetRiddles(myQuest["id"]!,callback: OnRiddlesRecieved)
             server.tryGetExtraRiddles(myQuest["id"]!,callback: OnExtraRiddlesRecived)
-        } else   {self.performSegueWithIdentifier("QuestToLogin",sender: self) }
+        } else   {   dispatch_async(dispatch_get_main_queue()) {self.performSegueWithIdentifier("QuestToLogin",sender: self) }}
     }
     func OnRiddlesRecieved(json:NSDictionary)
     {
@@ -132,6 +131,7 @@ class Quest :UIViewController, UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+         (segue.destinationViewController as UIViewController).hidesBottomBarWhenPushed = true
         if segue.identifier == "OriginalR" {
             (segue.destinationViewController as Original).riddle = current!
         }else

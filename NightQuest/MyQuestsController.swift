@@ -57,7 +57,12 @@ class MyQuestsController :UITableViewController, UITableViewDelegate, UITableVie
             server.tryGetMyQuestsList("new",callback: OnNewQListRecived)
             server.tryGetMyQuestsList("now",callback: OnNowQListRecived)
             server.tryGetMyQuestsList("old",callback: OnOldQListRecived)
-        } else   {self.performSegueWithIdentifier("MQuestsToLogin",sender: self) }
+        } else
+        {
+            dispatch_async(dispatch_get_main_queue()) {
+            self.performSegueWithIdentifier("MQuestsToLogin",sender: self)
+            }
+        }
     }
     func OnNewQListRecived(json:NSDictionary)
     {
