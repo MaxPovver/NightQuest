@@ -751,6 +751,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="Codes" destination="24X-Ph-ULz" id="sG2-LO-LLY"/>
+                        <outlet property="Content" destination="dkK-XV-Bbp" id="Z6a-Y9-uUM"/>
                         <outlet property="Hint" destination="Xcb-aY-Ncj" id="569-4b-SDt"/>
                         <outlet property="Picture" destination="kJ1-6z-nWL" id="LrA-q9-O1F"/>
                     </connections>

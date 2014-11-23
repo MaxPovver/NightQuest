@@ -20,6 +20,7 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     }
     
     
+    @IBOutlet weak var Content: UIView!
     @IBOutlet weak var Hint: UILabel!
     @IBOutlet weak var Picture: UIWebView!
     @IBOutlet weak var Codes: UITableView!
@@ -27,42 +28,33 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     var riddle: [String:String] { get {return _riddle} set(newval){_riddle = newval} }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib
         if !riddle.isEmpty {
-            //println()
-            /*let src = server.riddlePicHtml(riddle["id"]!)
-            print(src)*/
-           // Picture.loadRequest(NSURLRequest( URL:NSURL(string:src)! ) )
             Picture.loadHTMLString(server.riddlePicHtml(riddle["id"]!), baseURL: nil)
             let r = riddle["radius"]!
             Hint.text = "Коды нахоятся на расстоянии не больше \(r) м от места фото"
-          /* NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);*/
+           NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         }
     }
     deinit {
-       // NSNotificationCenter.defaultCenter().removeObserver(self);
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
-   /* func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(notification: NSNotification) {
         var info = notification.userInfo!
         var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.topConstraint.constant = keyboardFrame.size.height - 20
-         //   self.bottomConstraint.constant = keyboardFrame.size.height - 20
+            
+            self.Content.frame.offset(dx: 0, dy: -keyboardFrame.size.height)
         })
     }
     func keyboardWillHide(notification: NSNotification) {
         var info = notification.userInfo!
         var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        
         UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.topConstraint.constant = keyboardFrame.size.height + 20
-           // self.bottomConstraint.constant = keyboardFrame.size.height + 20
+            self.Content.frame.offset(dx: 0, dy: +keyboardFrame.size.height)
         })
-    }*/
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
