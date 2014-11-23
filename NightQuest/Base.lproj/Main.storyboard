@@ -653,7 +653,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsC-7h-clR">
-                                <rect key="frame" x="135" y="397" width="51" height="30"/>
+                                <rect key="frame" x="135" y="469" width="51" height="30"/>
                                 <state key="normal" title="Готово">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -664,8 +664,19 @@
                                     <action selector="Ready:" destination="M0d-eJ-n7e" eventType="touchUpInside" id="sGI-oF-HNn"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="ew9-wh-182"/>
+                                    <constraint firstAttribute="height" constant="200" id="gt6-sG-1pR"/>
+                                </constraints>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="64" width="568" height="268"/>
+                                </variation>
+                            </webView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="24X-Ph-ULz">
-                                <rect key="frame" x="0.0" y="272" width="321" height="120"/>
+                                <rect key="frame" x="-1" y="336" width="321" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="321" id="1Pa-SG-XBA"/>
@@ -679,27 +690,25 @@
                                     <outlet property="delegate" destination="M0d-eJ-n7e" id="lQm-Ar-OOZ"/>
                                 </connections>
                             </tableView>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJ1-6z-nWL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="ew9-wh-182"/>
-                                    <constraint firstAttribute="height" constant="200" id="gt6-sG-1pR"/>
-                                </constraints>
-                                <variation key="widthClass=regular" ambiguous="YES">
-                                    <rect key="frame" x="0.0" y="64" width="568" height="268"/>
-                                </variation>
-                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Коды нахоятся на расстонии не больше ... м от места фото" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcb-aY-Ncj">
+                                <rect key="frame" x="0.0" y="280" width="320" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WsC-7h-clR" secondAttribute="trailing" constant="134" id="01n-fE-mpB"/>
-                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="8" id="89B-0g-gka"/>
                             <constraint firstAttribute="trailing" secondItem="kJ1-6z-nWL" secondAttribute="trailing" id="L5b-AP-sZ4"/>
+                            <constraint firstItem="Xcb-aY-Ncj" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="Lgz-lI-efd"/>
                             <constraint firstAttribute="trailing" secondItem="24X-Ph-ULz" secondAttribute="trailing" constant="-1" id="fKQ-z0-MhJ"/>
                             <constraint firstItem="kJ1-6z-nWL" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="g0w-MM-fMb"/>
+                            <constraint firstItem="Xcb-aY-Ncj" firstAttribute="top" secondItem="kJ1-6z-nWL" secondAttribute="bottom" constant="16" id="iJh-be-6f0"/>
+                            <constraint firstAttribute="trailing" secondItem="Xcb-aY-Ncj" secondAttribute="trailing" id="lwr-Lw-6SM"/>
                             <constraint firstItem="kJ1-6z-nWL" firstAttribute="top" secondItem="egJ-lq-8wd" secondAttribute="top" constant="64" id="poc-V3-dQJ"/>
                             <constraint firstItem="WsC-7h-clR" firstAttribute="top" secondItem="24X-Ph-ULz" secondAttribute="bottom" constant="5" id="rbj-y4-CRa"/>
+                            <constraint firstItem="24X-Ph-ULz" firstAttribute="top" secondItem="Xcb-aY-Ncj" secondAttribute="bottom" constant="13" id="u2H-QF-5Nz"/>
                             <constraint firstItem="WsC-7h-clR" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" constant="135" id="ueR-Rd-Dn6"/>
                             <constraint firstItem="24X-Ph-ULz" firstAttribute="leading" secondItem="egJ-lq-8wd" secondAttribute="leading" id="xS3-Hj-xpl"/>
                         </constraints>
@@ -708,6 +717,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="Codes" destination="24X-Ph-ULz" id="sG2-LO-LLY"/>
+                        <outlet property="Hint" destination="Xcb-aY-Ncj" id="569-4b-SDt"/>
                         <outlet property="Picture" destination="kJ1-6z-nWL" id="LrA-q9-O1F"/>
                     </connections>
                 </viewController>

@@ -157,7 +157,7 @@ class Server {
         $types[2]="Фотоохота";
         $types[3]="Отгадал загадку и приехал на адрес раньше всех";
         $types[4]="Классика";*/
-        let allowed = ["1":"Оригинальный","2":"Фотоохота","3":"Отгадал загадку и приехал на адрес раньше всех","4":"Классика"]
+        let allowed = ["1":"Оригинальный","2":"Фотоохота","3":"Будь первым","4":"Классика"]
         let tmp = allowed[id]
         if tmp != nil {
             return tmp!
@@ -180,13 +180,13 @@ class Server {
         tryAnyQuery(qData, callback)
     }
     func riddlePicHtml(id: String)->String {
-        return "<img src='\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}' style='width:100%; height:100%;'>";
+        return "<img src='\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}' style='width:100%; height:100%;' alt='Фото места с кодами'>";
         //return "\(apiURL){\"action\":\"get\",\"what\":\"riddle-img\",\"rid\":\"\(id)\",\"token\":\"\(token)\"}"
         }
     func tryCheckRiddle(rid:String, code:String, callback:(NSDictionary)->Void) {
     exit(EXIT_FAILURE) //! доделать сразу после загадок!!
-        let qData="{\"action\":\"check\",\"what\":\"code\",\"rid\":\"\(rid)\",\"value\":\"\(code)\",\"token\":\"\(self.token)\"}";
-        tryAnyQuery(qData, callback)
+      //  let qData="{\"action\":\"check\",\"what\":\"code\",\"rid\":\"\(rid)\",\"code\":\"\(code)\",\"token\":\"\(self.token)\"}";
+        //tryAnyQuery(qData, callback)
     }
     func tryAnyQuery(data:String,callback:(NSDictionary)->Void)//делаем публичной для возможности расширить класс не меняя его кода
     {

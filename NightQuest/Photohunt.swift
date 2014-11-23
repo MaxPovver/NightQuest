@@ -19,6 +19,7 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
         super.init(coder: aDecoder)
     }
     
+    @IBOutlet weak var Hint: UILabel!
     @IBOutlet weak var Picture: UIWebView!
     @IBOutlet weak var Codes: UITableView!
     private var _riddle: [String:String]
@@ -34,6 +35,8 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
             print(src)*/
            // Picture.loadRequest(NSURLRequest( URL:NSURL(string:src)! ) )
             Picture.loadHTMLString(server.riddlePicHtml(riddle["id"]!), baseURL: nil)
+            let r = riddle["radius"]!
+            Hint.text = "Коды нахоятся на расстонии не больше \(r) м от места фото"
         }
     }
     
