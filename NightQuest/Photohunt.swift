@@ -11,13 +11,14 @@ import Foundation
 import UIKit
 
 
-class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, iRiddle  {//
+class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, iRiddle, UITextFieldDelegate  {//
 
     required init(coder aDecoder: NSCoder) {
         //fatalError("init(coder:) has not been implemented")
         _riddle = ["":""]
         super.init(coder: aDecoder)
     }
+    
     
     @IBOutlet weak var Hint: UILabel!
     @IBOutlet weak var Picture: UIWebView!
@@ -36,10 +37,32 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
            // Picture.loadRequest(NSURLRequest( URL:NSURL(string:src)! ) )
             Picture.loadHTMLString(server.riddlePicHtml(riddle["id"]!), baseURL: nil)
             let r = riddle["radius"]!
-            Hint.text = "Коды нахоятся на расстонии не больше \(r) м от места фото"
+            Hint.text = "Коды нахоятся на расстоянии не больше \(r) м от места фото"
+          /* NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);*/
         }
     }
-    
+    deinit {
+       // NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+   /* func keyboardWillShow(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.topConstraint.constant = keyboardFrame.size.height - 20
+         //   self.bottomConstraint.constant = keyboardFrame.size.height - 20
+        })
+    }
+    func keyboardWillHide(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.topConstraint.constant = keyboardFrame.size.height + 20
+           // self.bottomConstraint.constant = keyboardFrame.size.height + 20
+        })
+    }*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,23 +72,24 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     }
     
      func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0//4
+        return 1//4
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+/*    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "OriginalR" || segue.identifier == "PhotohuntR" || segue.identifier == "ComefirstR" {
             
             //segue.destinationViewController.parentViewController  = self
         }
         println("wtf")
-    }
+    }*/
     
      func tableView(tableView: UITableView,  numberOfRowsInSection section: Int) -> Int {
-        
+        if section == 0 { return 3 }
         return 0
     }
      func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        return UITableViewCell()
+        var cell:UITableViewCell = Codes.dequeueReusableCellWithIdentifier("CodeCell") as UITableViewCell
+        
+        return cell
     }
      func titleForHeaderInSection(tableView: UITableView,  section: Int) -> String? {
         return nil
@@ -76,4 +100,17 @@ class Photohunt: UIViewController, UITableViewDelegate, UITableViewDataSource, i
     override func supportedInterfaceOrientations() -> Int {// чтоб не поворачивли на бок
         return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
     }
+    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+    /*func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomConstraint.constant = keyboardFrame.size.height + 20
+        })
+    }*/
 }
