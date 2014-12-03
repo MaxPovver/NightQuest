@@ -25,6 +25,7 @@ class QuestViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         var rightButton = UIBarButtonItem(title: "Купить", style: .Done, target: self, action: "BuyBtnPressed")
         self.navigationItem.rightBarButtonItem = rightButton
+        
         Progress.startAnimating()
         server.tryGetQuest(myID,OnQuestRecived)
     }
